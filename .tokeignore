@@ -1,0 +1,9 @@
+*.md
+*.ini
+*.json
+*.yml
+*.config.js
+.gitignore
+.npmignore
+.prettierrc
+LICENSE
