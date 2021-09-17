@@ -7,3 +7,5 @@
 .npmignore
 .prettierrc
 LICENSE
+
+.yarn/
