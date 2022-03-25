@@ -32,4 +32,4 @@ jobs:
           cache: 'npm'
       - name: Run e2e tests
         run: |
-          ./ubuntu/ubuntu_setup.sh
+          ./ubuntu_setup.sh

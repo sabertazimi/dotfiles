@@ -18,7 +18,7 @@ PROMPT=1 # prompt before every install
 ROOT_DIR=$(pwd) #do not change
 ACTION="all"
 SRC_DIR=${HOME}/Work/Source
-GIT_CONFIG="./ubuntu_20.04.ini"
+GIT_CONFIG="./ubuntu/ubuntu_20.04.ini"
 NPM="cnpm"
 # }}}
 
