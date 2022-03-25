@@ -1,0 +1,37 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:base"],
+  "assignees": ["sabertazimi"],
+  "dependencyDashboard": false,
+  "labels": ["dependencies"],
+  "packageRules": [
+    {
+      "matchDepTypes": ["peerDependencies", "engines"],
+      "rangeStrategy": "widen"
+    },
+    {
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "pin",
+        "digest",
+        "lockFileMaintenance"
+      ],
+      "automerge": true,
+      "automergeType": "pr",
+      "automergeStrategy": "squash",
+      "groupName": "dependencies (non-major)",
+      "groupSlug": "dependencies"
+    },
+    {
+      "matchPackageNames": ["@sabertazimi/react-scripts"],
+      "matchPackagePatterns": ["^@dg-scripts/"],
+      "groupName": "bod monorepo"
+    }
+  ],
+  "postUpdateOptions": ["yarnDedupeHighest"],
+  "rangeStrategy": "bump",
+  "reviewers": ["sabertazimi"],
+  "schedule": ["every weekend"],
+  "timezone": "Asia/Shanghai"
+}
