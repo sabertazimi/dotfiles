@@ -14,7 +14,7 @@ stty echo
 
 # variable default setting {{{
 LOG_FILE="omu.log"
-PROMPT=1 # prompt before every install
+PROMPT=0 # prompt before every install
 ROOT_DIR=$(pwd) #do not change
 ACTION="all"
 SRC_DIR=${HOME}/Work/Source
@@ -344,14 +344,6 @@ mkdir -p ${SRC_DIR} || exit 3
 # set the separator to \n
 OLD_IFS="$IFS" 
 IFS=$'\x0A' 
-
-
-read -n1 -p "Install all software Without prompting?(y/n)" ans
-if [[  ${ans} =~ [yY] ]]; then
-    PROMPT=0
-else
-    PROMPT=1
-fi
 
 # BeforeInstall
 
