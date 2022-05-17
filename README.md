@@ -6,7 +6,13 @@
 [![Code Lines](https://img.shields.io/tokei/lines/github/sabertazimi/dotfiles?style=for-the-badge&logo=visualstudiocode)](https://github.com/sabertazimi/dotfiles)
 [![Code Size](https://img.shields.io/github/languages/code-size/sabertazimi/dotfiles?logo=visualstudiocode&style=for-the-badge)](https://github.com/sabertazimi/dotfiles)
 
-Sensible Hacker Defaults for Linux
+Sensible Hacker Defaults for Linux.
+
+## Reference
+
+- [Linux](https://github.com/thoughtbot/dotfiles)
+- [macOS](https://github.com/mathiasbynens/dotfiles)
+- [Ubuntu](https://github.com/gaunthan/Oh-My-Ubuntu)
 
 ## License
 
