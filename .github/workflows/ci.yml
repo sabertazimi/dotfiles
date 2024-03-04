@@ -23,13 +23,18 @@ jobs:
         with:
           submodules: true
           fetch-depth: 1
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
       - name: Setup Node environment
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
           architecture: ${{ matrix.architecture }}
           registry-url: https://registry.npmjs.org/
-          cache: 'npm'
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: |
+          pnpm install
       - name: Run e2e tests
         run: |
           ./ubuntu_setup.sh

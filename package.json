@@ -2,8 +2,12 @@
   "name": "dotfiles",
   "private": true,
   "version": "1.0.0",
+  "packageManager": "pnpm@8.15.4",
   "description": "Sensible hacker defaults for Linux.",
   "repository": "https://github.com/sabertazimi/dotfiles",
   "author": "sabertazimi <sabertazimi@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "commit-and-tag-version": "^12.2.0"
+  }
 }
