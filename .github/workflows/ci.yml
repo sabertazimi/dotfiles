@@ -15,7 +15,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node-version: [18]
+        node-version: [20]
         architecture: [x64]
     steps:
       - name: Checkout repository
