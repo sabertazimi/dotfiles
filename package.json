@@ -7,6 +7,10 @@
   "repository": "https://github.com/sabertazimi/dotfiles",
   "author": "sabertazimi <sabertazimi@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "changeset": "commit-and-tag-version --dry-run -s",
+    "release": "commit-and-tag-version -s"
+  },
   "devDependencies": {
     "commit-and-tag-version": "^12.2.0"
   }
