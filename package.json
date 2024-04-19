@@ -12,6 +12,6 @@
     "release": "commit-and-tag-version -s"
   },
   "devDependencies": {
-    "commit-and-tag-version": "^12.2.0"
+    "commit-and-tag-version": "^12.4.0"
   }
 }
