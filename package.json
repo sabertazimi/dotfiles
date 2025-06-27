@@ -2,7 +2,7 @@
   "name": "dotfiles",
   "private": true,
   "version": "1.0.0",
-  "packageManager": "pnpm@10.12.1",
+  "packageManager": "pnpm@10.12.4",
   "description": "Sensible hacker defaults for Linux.",
   "repository": "https://github.com/sabertazimi/dotfiles",
   "author": "sabertazimi <sabertazimi@gmail.com>",
