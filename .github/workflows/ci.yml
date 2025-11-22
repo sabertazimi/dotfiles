@@ -21,7 +21,7 @@ jobs:
         architecture: [x64]
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           submodules: true
           fetch-depth: 1
@@ -49,7 +49,7 @@ jobs:
     needs: [test]
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           submodules: true
           fetch-depth: 0
