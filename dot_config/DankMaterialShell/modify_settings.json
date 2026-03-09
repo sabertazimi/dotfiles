@@ -5,6 +5,8 @@ jq -j '
   .currentThemeName = "dynamic" |
   .currentThemeCategory = "dynamic" |
   .matugenScheme = "scheme-tonal-spot" |
+  .matugenTemplateNeovim = false |
+  .matugenTemplateVscode = false |
   .iconTheme = "Papirus" |
   .fontFamily = "思源黑体 CN" |
   .monoFontFamily = "Maple Mono NF CN" |

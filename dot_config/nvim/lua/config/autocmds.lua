@@ -17,14 +17,3 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.conceallevel = 0
   end,
 })
-
--- Apply dank colors theme on startup
-vim.api.nvim_create_autocmd("VimEnter", {
-  callback = function()
-    local dankcolors_path = vim.fn.stdpath("config") .. "/lua/plugins/dankcolors.lua"
-    local spec = dofile(dankcolors_path)
-    if spec and spec[1] and spec[1].config then
-      spec[1].config()
-    end
-  end,
-})

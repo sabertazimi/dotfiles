@@ -56,7 +56,7 @@ for detailed system configuration.
   - LSP: ESLint, Harper (grammar checker)
   - Mason: `shellcheck`
   - Plugins: Aerial (symbols), Blink (completion), Snacks (picker/terminal)
-  - Config: Custom keymaps, Dank colors theme, Markdown rendering
+  - Config: Custom keymaps, `catppuccin` color scheme, Markdown rendering
 
 ### Terminal & Shell
 
