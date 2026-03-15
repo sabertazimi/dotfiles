@@ -14,6 +14,7 @@
 [![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)](https://github.com/golang/go)
 [![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)](https://github.com/git/git)
 [![Ghostty](https://img.shields.io/badge/Ghostty-3551F3?style=for-the-badge&logo=ghostty&logoColor=white)](https://github.com/ghostty-org/ghostty)
+[![Tmux](https://img.shields.io/badge/Tmux-1BB91F?style=for-the-badge&logo=tmux&logoColor=white)](https://github.com/tmux/tmux)
 [![Zsh](https://img.shields.io/badge/Zsh-F15A24?style=for-the-badge&logo=zsh&logoColor=white)](https://github.com/ohmyzsh/ohmyzsh)
 [![Bash](https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnubash&logoColor=white)](https://github.com/ohmybash/oh-my-bash)
 [![Starship](https://img.shields.io/badge/Starship-DD0B78?style=for-the-badge&logo=starship&logoColor=white)](https://github.com/starship/starship)
@@ -60,8 +61,9 @@ for detailed system configuration.
 
 ### Terminal & Shell
 
-- Zsh: Oh My Zsh with modern CLI tools (`mise`, `zoxide`, `fzf` etc.)
 - Ghostty: Modern Wayland terminal with Dank colors theme
+- Tmux: Terminal multiplexer with `catppuccin` theme
+- Zsh: Oh My Zsh with modern CLI tools (`mise`, `zoxide`, `fzf` etc.)
 - Starship: Dynamic prompt via matugen (Material You theming)
 
 ### Utilities

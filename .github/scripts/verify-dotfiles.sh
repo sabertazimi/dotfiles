@@ -37,6 +37,7 @@ FILES=(
   "$HOME/.config/nvim/stylua.toml"
   "$HOME/.config/satty/config.toml"
   "$HOME/.config/television/cable/aur.toml"
+  "$HOME/.config/tmux/tmux.conf"
   "$HOME/.gitmsg.md"
   "$HOME/.local/share/fcitx5/rime/default.custom.yaml"
   "$HOME/.local/state/DankMaterialShell/session.json"
