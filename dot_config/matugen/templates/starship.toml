@@ -29,6 +29,8 @@ $time\
 [ ](fg:color_bg1)\
 $line_break$character"""
 
+add_newline = false
+
 palette = 'gruvbox_dark'
 
 [palettes.gruvbox_dark]
