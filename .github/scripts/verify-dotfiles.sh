@@ -39,6 +39,7 @@ FILES=(
   "$HOME/.config/television/cable/aur.toml"
   "$HOME/.config/tmux/tmux.conf"
   "$HOME/.gitmsg.md"
+  "$HOME/.local/bin/ghostty-tmux.sh"
   "$HOME/.local/share/fcitx5/rime/default.custom.yaml"
   "$HOME/.local/state/DankMaterialShell/session.json"
   "$HOME/.ripgreprc"
