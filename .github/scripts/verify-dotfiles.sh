@@ -34,6 +34,7 @@ FILES=(
   "$HOME/.config/nvim/lua/plugins/mason.lua"
   "$HOME/.config/nvim/lua/plugins/pairs.lua"
   "$HOME/.config/nvim/lua/plugins/snacks.lua"
+  "$HOME/.config/nvim/lua/plugins/tmux.lua"
   "$HOME/.config/nvim/lua/plugins/wakatime.lua"
   "$HOME/.config/nvim/README.md"
   "$HOME/.config/nvim/stylua.toml"
