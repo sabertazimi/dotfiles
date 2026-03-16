@@ -4,7 +4,7 @@ format = """
 [](color_orange)\
 $os\
 $username\
-[](bg:color_yellow fg:color_orange)\
+[](fg:color_orange bg:color_yellow)\
 $directory\
 [](fg:color_yellow bg:color_aqua)\
 $git_branch\
@@ -34,17 +34,17 @@ add_newline = false
 palette = 'gruvbox_dark'
 
 [palettes.gruvbox_dark]
-color_fg0 = '{{colors.on_primary.default.hex}}'
-color_fg1 = '{{colors.on_surface.default.hex}}'
-color_bg1 = '{{colors.secondary_container.default.hex}}'
-color_bg3 = '{{colors.secondary.default.hex}}'
-color_blue = '{{colors.inverse_primary.default.hex}}'
-color_aqua = '{{colors.on_secondary_container.default.hex}}'
-color_green = '#98971a'
-color_orange = '{{colors.primary_fixed_dim.default.hex}}'
-color_purple = '#b16286'
-color_red = '#cc241d'
-color_yellow = '{{colors.tertiary.default.hex}}'
+color_fg0 = '5'
+color_fg1 = '7'
+color_bg1 = '0'
+color_bg3 = '14'
+color_blue = '5'
+color_aqua = '14'
+color_green = '2'
+color_orange = '6'
+color_purple = '4'
+color_red = '1'
+color_yellow = '3'
 
 [os]
 disabled = false
