@@ -3,3 +3,8 @@
 [templates.starship]
 input_path = '~/.config/matugen/templates/starship.toml'
 output_path = '~/.config/starship.toml'
+
+[templates.tmux]
+input_path = '~/.config/matugen/templates/tmux.conf'
+output_path = '~/.config/tmux/theme.conf'
+post_hook = 'tmux source-file ~/.config/tmux/theme.conf'
