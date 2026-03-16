@@ -20,6 +20,7 @@ FILES=(
   "$HOME/.config/niri/dms/windowrules.kdl"
   "$HOME/.config/nvim/.neoconf.json"
   "$HOME/.config/nvim/init.lua"
+  "$HOME/.config/nvim/lazyvim.json"
   "$HOME/.config/nvim/lua/config/autocmds.lua"
   "$HOME/.config/nvim/lua/config/keymaps.lua"
   "$HOME/.config/nvim/lua/config/lazy.lua"
