@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.4.0](https://github.com/sabertazimi/dotfiles/compare/v1.3.0...v1.4.0) (2026-03-16)
+
+
+### Features
+
+* **ghostty-tmux:** add smart tmux wrapper script ([99b6ff5](https://github.com/sabertazimi/dotfiles/commit/99b6ff5c082fee060981aaa4163f160a97a3aaed))
+* **ghostty-tmux:** attach tmux when terminal started ([1c7d14d](https://github.com/sabertazimi/dotfiles/commit/1c7d14d57464260beed1fee0a48f391c170bac18))
+* **linux-terminal:** set up tmux pane keys ([6083067](https://github.com/sabertazimi/dotfiles/commit/60830678561491cd05adb722a746b0fb9857b71e))
+* **linux-terminal:** tmux window name and host status ([c442ed3](https://github.com/sabertazimi/dotfiles/commit/c442ed3c816172eae4166a3de00d73cfd7e60aa8))
+* **matugen-tmux:** add dynamic theme template ([69ed581](https://github.com/sabertazimi/dotfiles/commit/69ed581299892d438a84e88a794fa530c42cea03))
+* **matugen:** use terminal color indices for starship palette ([1d8fb63](https://github.com/sabertazimi/dotfiles/commit/1d8fb633d0f883965938111a785b702363ad5a3d))
+* **niri-window:** set up niri window rules ([445f75b](https://github.com/sabertazimi/dotfiles/commit/445f75be5ceabe0506073df4493f5fe5cc2842ab))
+* **nvim-lualine:** customize `lualine` separator glyphs ([8bd15fe](https://github.com/sabertazimi/dotfiles/commit/8bd15feda8973f9b0b9768b8be9fa5f95e315ea8))
+* **nvim:** switch to the official `catppuccin` color scheme ([e606208](https://github.com/sabertazimi/dotfiles/commit/e606208d605464c994de783f970e3b5dada2c6e2))
+* **nvim:** update theme integration and lualine styling ([2ada3f1](https://github.com/sabertazimi/dotfiles/commit/2ada3f1919b229f8379c4738db487147f4a85175))
+* **tmux:** adapt window separators to transparent background ([b122c88](https://github.com/sabertazimi/dotfiles/commit/b122c88c6f9969c8b3661865a78726686d624f71))
+* **tmux:** add initial tmux configuration with `catppuccin` theme ([886b8ab](https://github.com/sabertazimi/dotfiles/commit/886b8ab903d635681146588f67adffa4dfd53c2c))
+* **tmux:** enable extended keys ([bb90638](https://github.com/sabertazimi/dotfiles/commit/bb9063819931577bd61866697fea781bf7deea14))
+
+
+### Bug Fixes
+
+* **ghostty:** adjust vertical padding ([c31a7bd](https://github.com/sabertazimi/dotfiles/commit/c31a7bde604d2b95a0053f8656efd91dc489e56b))
+* **ghostty:** restore ghostty vertical padding ([91bc77a](https://github.com/sabertazimi/dotfiles/commit/91bc77a605e87f3c83c5b22d9c3d6e523eddb58e))
+* **linux-terminal:** tmux paste buffer bracketed mode ([c580e47](https://github.com/sabertazimi/dotfiles/commit/c580e4727b0bf7218238edf5ece24e7387f0423c))
+
 ## [1.3.0](https://github.com/sabertazimi/dotfiles/compare/v1.2.0...v1.3.0) (2026-03-07)
 
 
