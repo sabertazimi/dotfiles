@@ -27,6 +27,8 @@
 Hackable personal dotfiles managed with [`chezmoi`](https://github.com/twpayne/chezmoi)
 (`/ʃeɪ mwa/`).
 
+![Dotfiles](./.github/screenshots/arch.png)
+
 ## Installation
 
 Set up new machine:
