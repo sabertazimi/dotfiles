@@ -27,7 +27,9 @@
 Hackable personal dotfiles managed with [`chezmoi`](https://github.com/twpayne/chezmoi)
 (`/ʃeɪ mwa/`).
 
-![Dotfiles](./.github/screenshots/arch.png)
+![Dank Material Shell](./.github/screenshots/dms.webp)
+![Niri](./.github/screenshots/niri.webp)
+![Ghostty](./.github/screenshots/ghostty.webp)
 
 ## Installation
 
@@ -134,7 +136,7 @@ sed -i 's/^ZSH_THEME=".*"/ZSH_THEME="dragon"/' ~/.zshrc
 source ~/.zshrc
 ```
 
-![Zsh Theme](./.github/screenshots/zsh.png)
+![Zsh Theme](./.github/screenshots/zsh.webp)
 
 ### Bash Theme
 
@@ -147,7 +149,7 @@ sed -i 's/^OSH_THEME=".*"/OSH_THEME="dragon"/' ~/.bashrc
 source ~/.bashrc
 ```
 
-![Bash Theme](./.github/screenshots/bash.png)
+![Bash Theme](./.github/screenshots/bash.webp)
 
 ## Caveats
 
