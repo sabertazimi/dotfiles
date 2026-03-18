@@ -165,6 +165,7 @@ alias dig="doggo"
 alias diff="delta"
 alias vi="nvim"
 alias vim="nvim"
+alias svim="sudoedit"
 
 # Coding agents
 alias cc="claude"
