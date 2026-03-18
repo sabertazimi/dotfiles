@@ -67,7 +67,9 @@ for detailed system configuration.
 
 - Ghostty: Modern Wayland terminal with Dank colors theme
 - Tmux: Terminal multiplexer with `catppuccin` theme
-- Zsh: Oh My Zsh with modern CLI tools (`mise`, `zoxide`, `fzf` etc.)
+- Zsh: Blazing fast [`Zinit`](https://github.com/zdharma-continuum/zinit) configuration
+  with modern CLI tools (`zoxide`, `fzf`, `eza`, `bat` etc.)
+  and lightweight [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh) integration.
 - Starship: Dynamic prompt via matugen (Material You theming)
 
 ### Utilities
