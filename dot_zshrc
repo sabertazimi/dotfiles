@@ -13,6 +13,11 @@ export FZF_DEFAULT_COMMAND="fd --type f --strip-cwd-prefix --hidden --follow --e
 export UV_PYTHON_INSTALL_MIRROR="https://gh-proxy.com/github.com/indygreg/python-build-standalone/releases/download/"
 export UV_DEFAULT_INDEX="https://mirrors.aliyun.com/pypi/simple/"
 
+# Source Ghostty shell integration manually for tmux
+if [[ -n "$GHOSTTY_RESOURCES_DIR" ]] && [[ -r "$GHOSTTY_RESOURCES_DIR/shell-integration/zsh/ghostty-integration" ]]; then
+  source "$GHOSTTY_RESOURCES_DIR/shell-integration/zsh/ghostty-integration"
+fi
+
 # Zinit
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
