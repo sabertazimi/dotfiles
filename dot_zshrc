@@ -18,10 +18,23 @@ if [[ -n "$GHOSTTY_RESOURCES_DIR" ]] && [[ -r "$GHOSTTY_RESOURCES_DIR/shell-inte
   source "$GHOSTTY_RESOURCES_DIR/shell-integration/zsh/ghostty-integration"
 fi
 
+# Ghostty shaders
+GHOSTTY_SHADERS_HOME="${XDG_CONFIG_HOME:-${HOME}/.config}/ghostty/shaders"
+[ ! -d "$GHOSTTY_SHADERS_HOME" ] && mkdir -p "$(dirname "$GHOSTTY_SHADERS_HOME")"
+[ ! -d "$GHOSTTY_SHADERS_HOME/.git" ] && git clone --depth=1 https://github.com/sahaj-b/ghostty-cursor-shaders "$GHOSTTY_SHADERS_HOME"
+
+# Tmux catppuccin theme
+TMUX_CATPPUCCIN_HOME="${XDG_CONFIG_HOME:-${HOME}/.config}/tmux/plugins/catppuccin/tmux"
+[ ! -d "$TMUX_CATPPUCCIN_HOME" ] && mkdir -p "$(dirname "$TMUX_CATPPUCCIN_HOME")"
+[ ! -d "$TMUX_CATPPUCCIN_HOME/.git" ] && git clone --depth=1 https://github.com/catppuccin/tmux "$TMUX_CATPPUCCIN_HOME"
+
+# Rclone directory
+[ ! -d "$HOME/onedrive" ] && mkdir -p "$HOME/onedrive"
+
 # Zinit
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit"
-[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
-[ ! -d $ZINIT_HOME/.git ] && git clone --depth=1 https://github.com/zdharma-continuum/zinit "$ZINIT_HOME"
+[ ! -d "$ZINIT_HOME" ] && mkdir -p "$(dirname $ZINIT_HOME)"
+[ ! -d "$ZINIT_HOME/.git" ] && git clone --depth=1 https://github.com/zdharma-continuum/zinit "$ZINIT_HOME"
 source "${ZINIT_HOME}/zinit.zsh"
 
 # Plugins
