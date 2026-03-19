@@ -7,7 +7,7 @@ esac
 # Environment
 export EDITOR="nvim"
 export VISUAL="nvim"
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$(go env GOPATH)/bin:$PATH"
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 export FZF_DEFAULT_COMMAND="fd --type f --strip-cwd-prefix --hidden --follow --exclude .git"
 export UV_PYTHON_INSTALL_MIRROR="https://gh-proxy.com/github.com/indygreg/python-build-standalone/releases/download/"
