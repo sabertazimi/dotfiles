@@ -29,11 +29,11 @@ zinit snippet OMZL::theme-and-appearance.zsh
 zinit snippet OMZP::git
 zinit snippet OMZP::vi-mode
 zinit snippet OMZP::last-working-dir
-zinit light Aloxaf/fzf-tab
 zinit wait lucid light-mode for \
   blockf atpull'zinit creinstall -q .' zsh-users/zsh-completions \
+  atinit"zicompinit; zicdreplay" Aloxaf/fzf-tab \
   atload"_zsh_autosuggest_start" zsh-users/zsh-autosuggestions \
-  atinit"zicompinit; zicdreplay; _tool_init" zsh-users/zsh-syntax-highlighting
+  atinit"_tool_init" zsh-users/zsh-syntax-highlighting
 
 # Completion styling
 zstyle ':completion:*:git-checkout:*' sort false
