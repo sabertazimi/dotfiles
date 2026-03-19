@@ -1,36 +1,24 @@
 binds {
-    Mod+Comma { "consume-window-into-column"; }
-    Mod+Alt+A { screenshot; }
-    Mod+B { spawn "firefox"; }
-    Mod+E { spawn "nautilus"; }
-    Mod+M { spawn "/opt/SPlayer/SPlayer" ; }
-    Mod+S { spawn "code"; }
-
     // === System & Overview ===
     Mod+Tab repeat=false { toggle-overview; }
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     // === Application Launchers ===
-    Mod+T hotkey-overlay-title="Open Terminal" { spawn "sh" "-c" "$HOME/.local/bin/ghostty-tmux.sh"; }
     Mod+D hotkey-overlay-title="Application Launcher" {
         spawn "dms" "ipc" "call" "spotlight" "toggle";
     }
-    Mod+Shift+C hotkey-overlay-title="Clipboard Manager" {
-        spawn "dms" "ipc" "call" "clipboard" "toggle";
-    }
-    Mod+Shift+T hotkey-overlay-title="Task Manager" {
-        spawn "dms" "ipc" "call" "processlist" "focusOrToggle";
-    }
-
-    Super+X hotkey-overlay-title="Power Menu: Toggle" { spawn "dms" "ipc" "call" "powermenu" "toggle"; }
-    Mod+Shift+S hotkey-overlay-title="Settings" {
-        spawn "dms" "ipc" "call" "settings" "focusOrToggle";
-    }
-    Mod+Y hotkey-overlay-title="Browse Wallpapers" {
-        spawn "dms" "ipc" "call" "dankdash" "wallpaper";
-    }
+    Mod+B hotkey-overlay-title="Web Browser" { spawn "firefox"; }
+    Mod+E hotkey-overlay-title="File Explorer" { spawn "nautilus"; }
+    Mod+M hotkey-overlay-title="Music Player" { spawn "/opt/SPlayer/SPlayer"; }
     Mod+N hotkey-overlay-title="Notification Center" { spawn "dms" "ipc" "call" "notifications" "toggle"; }
+    Mod+S hotkey-overlay-title="Code Editor" { spawn "code"; }
+    Mod+T hotkey-overlay-title="Open Terminal" { spawn "sh" "-c" "$HOME/.local/bin/ghostty-tmux.sh"; }
+    Mod+X hotkey-overlay-title="Power Menu: Toggle" { spawn "dms" "ipc" "call" "powermenu" "toggle"; }
+    Mod+Y hotkey-overlay-title="Browse Wallpapers" { spawn "dms" "ipc" "call" "dankdash" "wallpaper"; }
+    Mod+Shift+C hotkey-overlay-title="Clipboard Manager" { spawn "dms" "ipc" "call" "clipboard" "toggle"; }
     Mod+Shift+N hotkey-overlay-title="Notepad" { spawn "dms" "ipc" "call" "notepad" "toggle"; }
+    Mod+Shift+S hotkey-overlay-title="Settings" { spawn "dms" "ipc" "call" "settings" "focusOrToggle"; }
+    Mod+Shift+T hotkey-overlay-title="Task Manager" { spawn "dms" "ipc" "call" "processlist" "focusOrToggle"; }
 
     // === Security ===
     Mod+Alt+L hotkey-overlay-title="Lock Screen" {
@@ -195,6 +183,7 @@ binds {
     // === Column Management ===
     Mod+BracketLeft  { consume-or-expel-window-left; }
     Mod+BracketRight { consume-or-expel-window-right; }
+    Mod+Comma { consume-window-into-column; }
     Mod+Period { expel-window-from-column; }
 
     // === Sizing & Layout ===
@@ -212,12 +201,14 @@ binds {
     Mod+Shift+Equal { set-window-height "+10%"; }
 
     // === Screenshots ===
+    Mod+Alt+A { screenshot; }
     XF86Launch1 { screenshot; }
     Ctrl+XF86Launch1 { screenshot-screen; }
     Alt+XF86Launch1 { screenshot-window; }
     Print { screenshot; }
     Ctrl+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
+
     // === System Controls ===
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
     Mod+Shift+P { power-off-monitors; }
