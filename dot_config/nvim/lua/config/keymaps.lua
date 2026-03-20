@@ -8,6 +8,8 @@ local spell_lang = "en"
 local spell_file = vim.fn.stdpath("config") .. "/spell/" .. spell_lang .. ".utf-8.add"
 
 wk.add({
+  { "<leader>|", "<Nop>", hidden = true },
+  { "<leader>\\", "<C-W>v", desc = "Split Window Right", remap = true },
   {
     "<leader>um",
     function()
