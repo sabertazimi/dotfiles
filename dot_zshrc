@@ -15,13 +15,13 @@ export UV_DEFAULT_INDEX="https://mirrors.aliyun.com/pypi/simple/"
 
 # Source Ghostty shell integration manually for tmux
 if [[ -n "$GHOSTTY_RESOURCES_DIR" ]] && [[ -r "$GHOSTTY_RESOURCES_DIR/shell-integration/zsh/ghostty-integration" ]]; then
-  source "$GHOSTTY_RESOURCES_DIR/shell-integration/zsh/ghostty-integration"
+  builtin source "$GHOSTTY_RESOURCES_DIR/shell-integration/zsh/ghostty-integration"
 fi
 
-# Ghostty shaders
-GHOSTTY_SHADERS_HOME="${XDG_CONFIG_HOME:-${HOME}/.config}/ghostty/shaders"
-[ ! -d "$GHOSTTY_SHADERS_HOME" ] && mkdir -p "$(dirname "$GHOSTTY_SHADERS_HOME")"
-[ ! -d "$GHOSTTY_SHADERS_HOME/.git" ] && git clone --depth=1 https://github.com/sahaj-b/ghostty-cursor-shaders "$GHOSTTY_SHADERS_HOME"
+# Ghostty shader
+GHOSTTY_SHADER_HOME="${XDG_CONFIG_HOME:-${HOME}/.config}/ghostty/shaders"
+[ ! -d "$GHOSTTY_SHADER_HOME" ] && mkdir -p "$(dirname "$GHOSTTY_SHADER_HOME")"
+[ ! -d "$GHOSTTY_SHADER_HOME/.git" ] && git clone --depth=1 https://github.com/sahaj-b/ghostty-cursor-shaders "$GHOSTTY_SHADER_HOME"
 
 # Tmux catppuccin theme
 TMUX_CATPPUCCIN_HOME="${XDG_CONFIG_HOME:-${HOME}/.config}/tmux/plugins/catppuccin/tmux"

@@ -6,6 +6,7 @@ font-family = "Maple Mono NF CN"
 window-decoration = false
 window-padding-x = 12
 window-padding-y = 12
+window-save-state = always
 background-opacity = 0.85
 background-blur-radius = 32
 
@@ -27,11 +28,15 @@ app-notifications = no-clipboard-copy,no-config-reload
 # Key bindings for common actions
 #keybind = ctrl+c=copy_to_clipboard
 #keybind = ctrl+v=paste_from_clipboard
+#keybind = ctrl+t=new_tab
 keybind = ctrl+shift+n=new_window
-# keybind = ctrl+t=new_tab
 keybind = ctrl+plus=increase_font_size:1
 keybind = ctrl+minus=decrease_font_size:1
 keybind = ctrl+zero=reset_font_size
+keybind = alt+h=goto_split:left
+keybind = alt+j=goto_split:down
+keybind = alt+k=goto_split:up
+keybind = alt+l=goto_split:right
 
 # Material 3 UI elements
 unfocused-split-opacity = 0.7
@@ -50,8 +55,6 @@ gtk-single-instance = true
 
 # Dank color generation
 theme = dankcolors
+
+# Shader
 custom-shader = shaders/cursor_warp.glsl
-keybind = alt+h=goto_split:left
-keybind = alt+j=goto_split:down
-keybind = alt+k=goto_split:up
-keybind = alt+l=goto_split:right
