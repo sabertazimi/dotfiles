@@ -34,5 +34,6 @@ wk.add({
     end,
     desc = "Terminal (Root Dir)",
     icon = " ",
+    mode = { "n", "t" },
   },
 })
