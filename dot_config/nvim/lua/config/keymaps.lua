@@ -30,7 +30,12 @@ wk.add({
   {
     "<C-`>",
     function()
-      Snacks.terminal(nil, { cwd = LazyVim.root() })
+      local cwd = LazyVim.root()
+      local terminal = vim.b.snacks_terminal
+      if vim.bo.filetype == "snacks_terminal" and type(terminal) == "table" and terminal.cwd and terminal.cwd ~= "" then
+        cwd = terminal.cwd
+      end
+      Snacks.terminal(nil, { cwd = cwd })
     end,
     desc = "Terminal (Root Dir)",
     icon = " ",
