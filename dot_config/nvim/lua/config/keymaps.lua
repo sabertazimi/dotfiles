@@ -36,4 +36,6 @@ wk.add({
     icon = " ",
     mode = { "n", "t" },
   },
+  { "<C-/>", "gcc", desc = "Toggle comment line", mode = { "n", "v" }, remap = true },
+  { "<C-_>", "gcc", mode = { "n", "v" }, hidden = true, remap = true },
 })
