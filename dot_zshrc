@@ -102,9 +102,9 @@ _fzf_compgen_dir() {
 
 # Package helpers
 alias yay="paru"
-alias pac="paru -Slq | fzf --multi --preview 'paru -Si {1}' | xargs -ro paru -S"
-alias pacr="paru -Qq | fzf --multi --preview 'paru -Qi {1}' | xargs -ro paru -Rns"
-alias pacl="paru -Qq | fzf --preview 'paru -Qil {1}' | xargs -ro paru -Qi"
+alias pac="paru -Slq | fzf --multi --preview 'paru -Si {1}' --preview-window=down:75% --layout=reverse | xargs -ro paru -S --needed"
+alias pacr="paru -Qq | fzf --multi --preview 'paru -Qi {1}' --preview-window=down:75% --layout=reverse | xargs -ro paru -Rns"
+alias pacl="paru -Qq | fzf --preview 'paru -Qil {1}' --preview-window=down:75% --layout=reverse --bind 'enter:execute(paru -Qil {} | bat --color=always --paging=always)'"
 
 # CLI aliases
 alias dot="chezmoi"
