@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-if pgrep -x "ghostty" >/dev/null; then
-  ghostty -e sh -c "tmux new-session \; set-option destroy-unattached on" &
+if tmux list-clients -F '#{client_pid}' 2>/dev/null | grep -q .; then
+  tmux new-session \; set-option destroy-unattached on
 else
-  ghostty -e sh -c "tmux attach || tmux" &
+  tmux attach-session || tmux new-session
 fi

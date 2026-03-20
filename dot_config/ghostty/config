@@ -58,3 +58,6 @@ theme = dankcolors
 
 # Shader
 custom-shader = shaders/cursor_warp.glsl
+
+# Command
+command = $HOME/.local/bin/ghostty-tmux.sh

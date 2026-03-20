@@ -12,7 +12,7 @@ binds {
     Mod+M hotkey-overlay-title="Music Player" { spawn "/opt/SPlayer/SPlayer"; }
     Mod+N hotkey-overlay-title="Notification Center" { spawn "dms" "ipc" "call" "notifications" "toggle"; }
     Mod+S hotkey-overlay-title="Code Editor" { spawn "code"; }
-    Mod+T hotkey-overlay-title="Open Terminal" { spawn "sh" "-c" "$HOME/.local/bin/ghostty-tmux.sh"; }
+    Mod+T hotkey-overlay-title="Open Terminal" { spawn "ghostty"; }
     Mod+X hotkey-overlay-title="Power Menu: Toggle" { spawn "dms" "ipc" "call" "powermenu" "toggle"; }
     Mod+Y hotkey-overlay-title="Browse Wallpapers" { spawn "dms" "ipc" "call" "dankdash" "wallpaper"; }
     Mod+Shift+C hotkey-overlay-title="Clipboard Manager" { spawn "dms" "ipc" "call" "clipboard" "toggle"; }
