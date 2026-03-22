@@ -40,10 +40,6 @@ sudo pacman -S chezmoi
 chezmoi init --apply -v sabertazimi
 ```
 
-```bash
-git clone https://github.com/sabertazimi/dotfiles.git ~/dotfiles
-```
-
 See [Arch Linux setup guide](https://notes.tazimi.dev/programming/linux/arch)
 for detailed system configuration.
 
@@ -103,7 +99,8 @@ Collection of wallpaper management scripts for Arch Linux:
 - Resolution priority selection for KDE Plasma wallpapers
 
 ```bash
-# Make scripts executable
+# Fetch scripts
+git clone --depth=1 https://github.com/sabertazimi/dotfiles.git ~/dotfiles
 chmod +x ~/dotfiles/wallpapers/*.sh
 
 # Install all wallpapers
