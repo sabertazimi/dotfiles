@@ -58,11 +58,28 @@ zstyle ':completion:*:git-checkout:*' sort false
 zstyle ':completion:*:descriptions' format '[%d]'
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' menu no
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always --icons --group-directories-first $realpath'
-zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza -1 --color=always --icons --group-directories-first $realpath'
-zstyle ':fzf-tab:complete:nvim:*' fzf-preview \
-  '[[ -d $realpath ]] && eza -1 --color=always --icons --group-directories-first "$realpath" | head -200 || \
-  (bat --color=always --style=numbers "$realpath" || cat "$realpath") 2>/dev/null'
+zstyle ':fzf-tab:complete:(cd|__zoxide_z):*' fzf-preview 'eza -1 --color=always --icons --group-directories-first $realpath'
+zstyle ':fzf-tab:complete:(mv|vim|nvim):*' fzf-preview \
+  'if [[ -d $realpath ]]; then
+    eza -1 --color=always --icons --group-directories-first "$realpath" | head -200
+  else
+    mime=$(file --mime-type -Lb "$realpath" 2>/dev/null)
+    case $mime in
+      image/*)
+        if command -v chafa >/dev/null 2>&1; then
+          chafa -s ${FZF_PREVIEW_COLUMNS}x${FZF_PREVIEW_LINES} "$realpath"
+        else
+          file --brief "$realpath"
+        fi
+        ;;
+      text/*|*/json|*/xml|*/javascript|application/x-shellscript|inode/x-empty)
+        (bat --color=always --style=numbers "$realpath" || cat "$realpath") 2>/dev/null
+        ;;
+      *)
+        file --brief "$realpath"
+        ;;
+    esac
+  fi'
 zstyle ':fzf-tab:*' use-fzf-default-opts yes
 zstyle ':fzf-tab:*' prefix ''
 zstyle ':fzf-tab:*' switch-group '<' '>'
