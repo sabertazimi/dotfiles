@@ -159,6 +159,9 @@ alias cxr="codex resume"
 alias oc="opencode"
 alias occ="opencode -c"
 
+# Git workflow
+alias gan="git add -N"
+
 # GitHub workflow
 alias gpn="gh pr new"
 alias gpc="gh pr checks --watch"
