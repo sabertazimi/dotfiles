@@ -11,7 +11,6 @@ binds {
     Mod+E hotkey-overlay-title="File Explorer" { spawn "nautilus"; }
     Mod+M hotkey-overlay-title="Music Player" { spawn "/opt/SPlayer/SPlayer"; }
     Mod+N hotkey-overlay-title="Notification Center" { spawn "dms" "ipc" "call" "notifications" "toggle"; }
-    Mod+S hotkey-overlay-title="Code Editor" { spawn "code"; }
     Mod+T hotkey-overlay-title="Open Terminal" { spawn "ghostty"; }
     Mod+X hotkey-overlay-title="Power Menu: Toggle" { spawn "dms" "ipc" "call" "powermenu" "toggle"; }
     Mod+Y hotkey-overlay-title="Browse Wallpapers" { spawn "dms" "ipc" "call" "dankdash" "wallpaper"; }
@@ -201,13 +200,15 @@ binds {
     Mod+Shift+Equal { set-window-height "+10%"; }
 
     // === Screenshots ===
-    Mod+Alt+A { screenshot; }
+    Mod+S hotkey-overlay-title="Screenshot" { screenshot; }
+    Mod+Ctrl+S { screenshot-window; }
+    Mod+Ctrl+Shift+S { screenshot-screen; }
     XF86Launch1 { screenshot; }
-    Ctrl+XF86Launch1 { screenshot-screen; }
-    Alt+XF86Launch1 { screenshot-window; }
+    Ctrl+XF86Launch1 { screenshot-window; }
+    Ctrl+Shift+XF86Launch1 { screenshot-screen; }
     Print { screenshot; }
-    Ctrl+Print { screenshot-screen; }
-    Alt+Print { screenshot-window; }
+    Ctrl+Print { screenshot-window; }
+    Ctrl+Shift+Print { screenshot-screen; }
 
     // === System Controls ===
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
