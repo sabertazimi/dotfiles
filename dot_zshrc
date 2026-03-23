@@ -49,6 +49,7 @@ zinit snippet OMZP::vi-mode
 zinit snippet OMZP::last-working-dir
 zinit wait lucid light-mode for \
   blockf atpull'zinit creinstall -q .' zsh-users/zsh-completions \
+  atclone"./zplug.zsh" atpull"%atclone" g-plane/pnpm-shell-completion \
   atinit"zicompinit; zicdreplay" Aloxaf/fzf-tab \
   atload"_zsh_autosuggest_start" zsh-users/zsh-autosuggestions \
   atinit"_tool_init" zsh-users/zsh-syntax-highlighting
