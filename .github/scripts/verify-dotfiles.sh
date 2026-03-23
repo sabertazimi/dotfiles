@@ -44,6 +44,7 @@ FILES=(
   "$HOME/.config/tmux/tmux.conf"
   "$HOME/.gitmsg.md"
   "$HOME/.local/bin/ghostty-tmux.sh"
+  "$HOME/.local/bin/pacman-owns.sh"
   "$HOME/.local/share/fcitx5/rime/default.custom.yaml"
   "$HOME/.local/state/DankMaterialShell/session.json"
   "$HOME/.ripgreprc"
