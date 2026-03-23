@@ -32,7 +32,6 @@ FILES=(
   "$HOME/.config/nvim/lua/plugins/lsp.lua"
   "$HOME/.config/nvim/lua/plugins/lualine.lua"
   "$HOME/.config/nvim/lua/plugins/markdown.lua"
-  "$HOME/.config/nvim/lua/plugins/mason.lua"
   "$HOME/.config/nvim/lua/plugins/pairs.lua"
   "$HOME/.config/nvim/lua/plugins/snacks.lua"
   "$HOME/.config/nvim/lua/plugins/tmux.lua"
