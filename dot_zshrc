@@ -154,6 +154,9 @@ alias diff="delta"
 alias vi="nvim"
 alias vim="nvim"
 alias svim="sudoedit"
+alias -g NE="2> /dev/null"
+alias -g NO=">/dev/null"
+alias -g NUL="> /dev/null 2>&1"
 
 # Coding agents
 alias cc="claude"
