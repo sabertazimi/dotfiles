@@ -4,6 +4,7 @@ set -euo pipefail
 FILES=(
   "$HOME/.cargo/config.toml"
   "$HOME/.claude/plugins/claude-hud/config.json"
+  "$HOME/.config/chezmoi/chezmoi.toml"
   "$HOME/.config/DankMaterialShell/settings.json"
   "$HOME/.config/environment.d/90-dms.conf"
   "$HOME/.config/fcitx5/config"
