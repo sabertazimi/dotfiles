@@ -88,7 +88,9 @@ zstyle ':fzf-tab:*' switch-group '<' '>'
 # zstyle ':fzf-tab:*' popup-min-size 80 10
 
 # Key bindings
+bindkey " " magic-space
 bindkey "^O" autosuggest-accept
+bindkey "^X^E" edit-command-line
 
 omz() {
   echo "==> Updating Zinit and plugins..."
