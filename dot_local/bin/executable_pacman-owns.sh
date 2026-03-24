@@ -4,18 +4,17 @@ set -uo pipefail
 
 print_help() {
   cat <<'EOF'
-Usage: pacman-info.sh <package-or-path> [package-or-path...]
+Usage: pacman-info.sh <command-or-path> [command-or-path...]
 
-Query installed package information by package name or owned file path.
-Arguments containing `/` are treated as paths and resolved via `paru -Qo`;
-other arguments are treated as package names and queried via `paru -Qi`.
+Query installed package information by command name or owned file path.
 EOF
 }
 
 resolve_package_name() {
-  local target="$1"
+  local target
   local query_output
 
+  target="$(command -v "$1")" || return 1
   query_output=$(paru -Qo -- "$target") || return 1
   awk 'END { print $(NF - 2) }' <<<"$query_output"
 }
@@ -32,16 +31,11 @@ main() {
   fi
 
   for target in "$@"; do
-    if [[ "$target" == */* ]]; then
-      package_name=$(resolve_package_name "$target") || {
-        status=1
-        continue
-      }
-      packages+=("$package_name")
+    package_name=$(resolve_package_name "$target") || {
+      status=1
       continue
-    fi
-
-    packages+=("$target")
+    }
+    packages+=("$package_name")
   done
 
   if [ "${#packages[@]}" -gt 0 ]; then

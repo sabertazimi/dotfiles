@@ -112,6 +112,7 @@ _tool_init() {
   (( $+commands[fx] )) && source <(fx --comp zsh)
   (( $+commands[procs] )) && source <(procs --gen-completion-out zsh)
   compdef curlie=curl
+  compdef pacman-owns.sh=which
 }
 
 # Use fd for listing path candidates
