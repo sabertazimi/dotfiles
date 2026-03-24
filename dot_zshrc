@@ -111,6 +111,7 @@ _tool_init() {
   (( $+commands[fzf] )) && source <(fzf --zsh)
   (( $+commands[fx] )) && source <(fx --comp zsh)
   (( $+commands[procs] )) && source <(procs --gen-completion-out zsh)
+  compdef curlie=curl
 }
 
 # Use fd for listing path candidates
