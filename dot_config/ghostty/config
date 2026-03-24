@@ -6,6 +6,7 @@ font-family = "Maple Mono NF CN"
 window-decoration = false
 window-padding-x = 12
 window-padding-y = 12
+window-padding-balance = true
 window-save-state = always
 background-opacity = 0.85
 background-blur-radius = 32
