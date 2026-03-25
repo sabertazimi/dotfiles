@@ -1,6 +1,7 @@
 {
   "extras": [
     "lazyvim.plugins.extras.ai.claudecode",
+    "lazyvim.plugins.extras.ai.copilot",
     "lazyvim.plugins.extras.editor.aerial",
     "lazyvim.plugins.extras.lang.go",
     "lazyvim.plugins.extras.lang.json",
