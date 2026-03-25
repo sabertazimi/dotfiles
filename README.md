@@ -22,6 +22,7 @@
 [![Claude Code](https://img.shields.io/badge/Claude_Code-D97757?style=for-the-badge&logo=claude&logoColor=white)](https://github.com/anthropics/claude-code)
 [![Rime](https://img.shields.io/badge/Rime-000000?style=for-the-badge&logo=rime&logoColor=white)](https://github.com/rime)
 [![MPV](https://img.shields.io/badge/MPV-691F69?style=for-the-badge&logo=mpv&logoColor=white)](https://github.com/mpv-player/mpv)
+[![Music](https://img.shields.io/badge/Music-D43C33?style=for-the-badge&logo=neteasecloudmusic&logoColor=white)](https://github.com/go-musicfox/go-musicfox)
 [![WakaTime](https://img.shields.io/badge/WakaTime-000000?style=for-the-badge&logo=wakatime&logoColor=white)](https://github.com/wakatime)
 
 Hackable personal dotfiles managed with [`chezmoi`](https://github.com/twpayne/chezmoi)
@@ -70,9 +71,9 @@ for detailed system configuration.
 
 ### Utilities
 
-- MPV: Hardware-accelerated video player
-- Satty: Wayland screenshot annotation tool
 - Fcitx-Rime: Chinese input with vertical candidates and dark theme
+- Satty: Wayland screenshot annotation tool
+- MPV: Hardware-accelerated video player
 
 ### Window Manager
 

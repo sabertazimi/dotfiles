@@ -179,7 +179,7 @@ alias gpm="gh pr merge --squash --delete-branch"
 
 # Misc
 alias onedrive="rclone mount onedrive:/ ~/onedrive --vfs-cache-mode full --daemon"
-alias ncm="/opt/SPlayer/SPlayer"
+alias ncm="musicfox"
 
 [ ! -f "$HOME/.zshrc.local" ] && touch ~/.zshrc.local
 source ~/.zshrc.local
