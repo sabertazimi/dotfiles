@@ -111,8 +111,6 @@ zstyle ':fzf-tab:complete:(mv|vim|nvim):*' fzf-preview \
 zstyle ':fzf-tab:*' use-fzf-default-opts yes
 zstyle ':fzf-tab:*' prefix ''
 zstyle ':fzf-tab:*' switch-group '<' '>'
-# zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
-# zstyle ':fzf-tab:*' popup-min-size 80 10
 
 # Key bindings
 bindkey " " magic-space
