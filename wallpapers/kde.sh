@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
 # Copy system wallpapers by resolution priority
 # Source: /usr/share/wallpapers/*/contents/images/
-
-set -euo pipefail
-
 SOURCE_BASE="/usr/share/wallpapers"
 TARGET_DIR="$HOME/.local/share/wallpapers"
 

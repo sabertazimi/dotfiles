@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
 # Copy Arch Linux wallpapers to ~/.local/share/wallpapers
 # Source: /usr/share/backgrounds/archlinux/
-
-set -euo pipefail
-
 SOURCE_DIR="/usr/share/backgrounds/archlinux"
 TARGET_DIR="$HOME/.local/share/wallpapers"
 

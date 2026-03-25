@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
 # Copy GNOME wallpapers (.jxl) and convert to .png
 # Source: /usr/share/backgrounds/gnome/
-
-set -euo pipefail
-
 SOURCE_DIR="/usr/share/backgrounds/gnome"
 TARGET_DIR="$HOME/.local/share/wallpapers"
 TEMP_DIR=$(mktemp -d)

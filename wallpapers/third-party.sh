@@ -1,12 +1,10 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
 # Download third-party wallpapers from URLs
 # Usage: third-party.sh [URL[#name]...]
 #   URL        - Download URL
 #   URL#name   - Download URL with custom filename (e.g., "http://example.com/img.jpg#my-name.jpg")
-
-set -euo pipefail
-
 TARGET_DIR="$HOME/.local/share/wallpapers"
 MAX_RETRIES="${MAX_RETRIES:-3}"
 TEMP_DIR=$(mktemp -d)
