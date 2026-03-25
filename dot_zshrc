@@ -93,6 +93,7 @@ zstyle ':fzf-tab:*' switch-group '<' '>'
 # Key bindings
 bindkey " " magic-space
 bindkey "^O" autosuggest-accept
+bindkey "^G" edit-command-line
 bindkey "^X^E" edit-command-line
 
 omz() {
