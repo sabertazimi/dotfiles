@@ -12,7 +12,11 @@ jq -j '
   .monoFontFamily = "Maple Mono NF CN" |
   .use24HourClock = true |
   .weatherEnabled = true |
-  .barConfigs |= map(if .id == "default" or .id == null then .transparency = 0 | .widgetTransparency = 0.65 else . end) |
+  .barConfigs |= map(
+    if .id == "default" or .id == null then
+      .transparency = 0 | .widgetTransparency = 1
+    else . end
+  ) |
   .notificationRules = [
   {
     "enabled": true,
@@ -26,7 +30,7 @@ jq -j '
   .showDock = true |
   .dockSmartAutoHide = true |
   .dockGroupByApp = true |
-  .dockTransparency = 0.65 |
+  .dockTransparency = 0.85 |
   .launcherLogoMode = "os" |
   .launcherLogoColorOverride = "primary"
 '
