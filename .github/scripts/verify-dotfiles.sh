@@ -4,6 +4,7 @@ set -euo pipefail
 FILES=(
   "$HOME/.cargo/config.toml"
   "$HOME/.claude/plugins/claude-hud/config.json"
+  "$HOME/.config/cava/config"
   "$HOME/.config/chezmoi/chezmoi.toml"
   "$HOME/.config/DankMaterialShell/settings.json"
   "$HOME/.config/environment.d/90-dms.conf"
@@ -13,6 +14,7 @@ FILES=(
   "$HOME/.config/ghostty/config"
   "$HOME/.config/go/env"
   "$HOME/.config/matugen/config.toml"
+  "$HOME/.config/matugen/templates/cava.ini"
   "$HOME/.config/matugen/templates/starship.toml"
   "$HOME/.config/matugen/templates/tmux.conf"
   "$HOME/.config/mimeapps.list"

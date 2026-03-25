@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# Idempotent cava config modifier
+# Usage: cat ~/.config/cava/config | ./modify_config > ~/.config/cava/config.new
+
+content=$(cat)
+
+# Check if theme = 'matugen' already exists
+if echo "$content" | grep -q "^theme[[:space:]]*=[[:space:]]*'matugen'"; then
+  echo "$content"
+  exit 0
+fi
+
+# Replace to 'theme = 'matugen'' in [color] section
+echo "$content" | sed '/^[[:space:]]*;*[[:space:]]*theme[[:space:]]*=/d' | awk '/^\[color\]/ { print; print "theme = '\''matugen'\''"; next } { print }'

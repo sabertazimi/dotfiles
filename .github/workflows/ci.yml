@@ -38,9 +38,11 @@ jobs:
           pacman -Syu --noconfirm --needed chezmoi jq
       - name: Setup config fixtures
         run: |
-          mkdir -p ~/.config/niri/dms
+          mkdir -p ~/.config/cava
+          mkdir -p ~/.config/niri
           mkdir -p ~/.config/DankMaterialShell
           mkdir -p ~/.local/state/DankMaterialShell
+          cp .github/fixtures/cava-config.ini ~/.config/cava/config
           cp .github/fixtures/niri-config.kdl ~/.config/niri/config.kdl
           cp .github/fixtures/dms-settings.json ~/.config/DankMaterialShell/settings.json
           cp .github/fixtures/dms-session.json ~/.local/state/DankMaterialShell/session.json
