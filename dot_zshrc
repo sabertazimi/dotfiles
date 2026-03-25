@@ -57,6 +57,30 @@ zinit wait lucid light-mode for \
   atload"_zsh_autosuggest_start" zsh-users/zsh-autosuggestions \
   atinit"_tool_init" zsh-users/zsh-syntax-highlighting
 
+# Tool initialization
+_tool_init() {
+  (( $+commands[uv] )) && eval "$(uv generate-shell-completion zsh)"
+  (( $+commands[uvx] )) && eval "$(uvx --generate-shell-completion zsh)"
+  (( $+commands[mise] )) && eval "$(mise activate zsh)"
+  (( $+commands[zoxide] )) && eval "$(zoxide init --cmd cd zsh)"
+  (( $+commands[tv] )) && eval "$(tv init zsh)"
+  (( $+commands[fzf] )) && source <(fzf --zsh)
+  (( $+commands[fx] )) && source <(fx --comp zsh)
+  (( $+commands[procs] )) && source <(procs --gen-completion-out zsh)
+  compdef curlie=curl
+  compdef pacman-owns.sh=which
+}
+
+# Use fd for listing path candidates
+_fzf_compgen_path() {
+  fd --hidden --follow --exclude ".git" . "$1"
+}
+
+# Use fd for list directory candidates
+_fzf_compgen_dir() {
+  fd --type d --hidden --follow --exclude ".git" . "$1"
+}
+
 # Completion styling
 zstyle ':completion:*:git-checkout:*' sort false
 zstyle ':completion:*:descriptions' format '[%d]'
@@ -100,30 +124,6 @@ omz() {
   echo "==> Updating Zinit and plugins..."
   zinit self-update && zinit update --all --parallel
   echo "\n✓ All Zinit plugins updated!"
-}
-
-# Tool initialization
-_tool_init() {
-  (( $+commands[uv] )) && eval "$(uv generate-shell-completion zsh)"
-  (( $+commands[uvx] )) && eval "$(uvx --generate-shell-completion zsh)"
-  (( $+commands[mise] )) && eval "$(mise activate zsh)"
-  (( $+commands[zoxide] )) && eval "$(zoxide init --cmd cd zsh)"
-  (( $+commands[tv] )) && eval "$(tv init zsh)"
-  (( $+commands[fzf] )) && source <(fzf --zsh)
-  (( $+commands[fx] )) && source <(fx --comp zsh)
-  (( $+commands[procs] )) && source <(procs --gen-completion-out zsh)
-  compdef curlie=curl
-  compdef pacman-owns.sh=which
-}
-
-# Use fd for listing path candidates
-_fzf_compgen_path() {
-  fd --hidden --follow --exclude ".git" . "$1"
-}
-
-# Use fd for list directory candidates
-_fzf_compgen_dir() {
-  fd --type d --hidden --follow --exclude ".git" . "$1"
 }
 
 # Package helpers
