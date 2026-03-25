@@ -48,6 +48,7 @@ FILES=(
   "$HOME/.gitmsg.md"
   "$HOME/.local/bin/pacman-owns.sh"
   "$HOME/.local/bin/tmux-entry.sh"
+  "$HOME/.local/bin/tmux-music.sh"
   "$HOME/.local/share/fcitx5/rime/default.custom.yaml"
   "$HOME/.local/state/DankMaterialShell/session.json"
   "$HOME/.ripgreprc"
