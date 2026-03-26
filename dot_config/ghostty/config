@@ -22,6 +22,7 @@ scrollback-limit = 3023
 mouse-hide-while-typing = true
 copy-on-select = false
 confirm-close-surface = false
+quick-terminal-size = 50%, 40%
 
 # Disable annoying copied to clipboard
 app-notifications = no-clipboard-copy,no-config-reload
@@ -34,6 +35,7 @@ keybind = ctrl+shift+n=new_window
 keybind = ctrl+plus=increase_font_size:1
 keybind = ctrl+minus=decrease_font_size:1
 keybind = ctrl+zero=reset_font_size
+keybind = alt+t=toggle_quick_terminal
 
 # Material 3 UI elements
 unfocused-split-opacity = 0.7
