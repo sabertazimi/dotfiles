@@ -21,6 +21,7 @@ require_command cava
 
 current_path="$(tmux display-message -p '#{pane_current_path}')"
 session_name="$(tmux display-message -p '#S')"
+current_window_name="$(tmux display-message -p '#{window_name}')"
 window_target="${session_name}:${WINDOW_NAME}"
 musicfox_pane="${window_target}.1"
 cava_pane="${window_target}.2"
@@ -33,7 +34,11 @@ cleanup() {
 trap cleanup EXIT
 
 if tmux list-windows -t "$session_name" -F '#W' | grep -Fxq "$WINDOW_NAME"; then
-  tmux select-window -t "$window_target"
+  if [ "$current_window_name" = "$WINDOW_NAME" ]; then
+    tmux last-window
+  else
+    tmux select-window -t "$window_target"
+  fi
   exit 0
 fi
 
