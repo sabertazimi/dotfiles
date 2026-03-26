@@ -24,6 +24,13 @@ session_name="$(tmux display-message -p '#S')"
 window_target="${session_name}:${WINDOW_NAME}"
 musicfox_pane="${window_target}.1"
 cava_pane="${window_target}.2"
+lock_channel="tmux-music:${session_name}:${WINDOW_NAME}"
+
+tmux wait-for -L "$lock_channel"
+cleanup() {
+  tmux wait-for -U "$lock_channel"
+}
+trap cleanup EXIT
 
 if tmux list-windows -t "$session_name" -F '#W' | grep -Fxq "$WINDOW_NAME"; then
   tmux select-window -t "$window_target"
@@ -42,9 +49,7 @@ if ((desired_shrink > 0)); then
   tmux resize-pane -D -t "$cava_pane" "$desired_shrink"
 fi
 
+# Open current playlist.
 tmux select-pane -t "$musicfox_pane"
-tmux select-window -t "$window_target"
-
-# Jump to the current playlist.
 sleep "${TMUX_MUSICFOX_JUMP_DELAY:-1}"
 tmux send-keys -t "$musicfox_pane" c
