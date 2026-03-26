@@ -22,6 +22,8 @@ require_command cava
 current_path="$(tmux display-message -p '#{pane_current_path}')"
 session_name="$(tmux display-message -p '#S')"
 window_target="${session_name}:${WINDOW_NAME}"
+musicfox_pane="${window_target}.1"
+cava_pane="${window_target}.2"
 
 if tmux list-windows -t "$session_name" -F '#W' | grep -Fxq "$WINDOW_NAME"; then
   tmux select-window -t "$window_target"
@@ -32,13 +34,17 @@ tmux new-window -n "$WINDOW_NAME" -c "$current_path" -d 'exec musicfox'
 tmux split-window -v -t "$window_target" -c "$current_path" 'exec cava'
 
 # Resize the lower cava pane to the configured target height when possible.
-cava_pane_height="$(tmux display-message -p -t "${window_target}.2" '#{pane_height}')"
+cava_pane_height="$(tmux display-message -p -t "$cava_pane" '#{pane_height}')"
 target_cava_height="${TMUX_MUSIC_CAVA_HEIGHT:-12}"
 desired_shrink=$((cava_pane_height - target_cava_height))
 
 if ((desired_shrink > 0)); then
-  tmux resize-pane -D -t "${window_target}.2" "$desired_shrink"
+  tmux resize-pane -D -t "$cava_pane" "$desired_shrink"
 fi
 
-tmux select-pane -t "${window_target}.1"
+tmux select-pane -t "$musicfox_pane"
 tmux select-window -t "$window_target"
+
+# Jump to the current playlist.
+sleep "${TMUX_MUSICFOX_JUMP_DELAY:-1}"
+tmux send-keys -t "$musicfox_pane" c
