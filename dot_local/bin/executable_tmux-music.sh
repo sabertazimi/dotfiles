@@ -35,7 +35,9 @@ trap cleanup EXIT
 
 if tmux list-windows -t "$session_name" -F '#W' | grep -Fxq "$WINDOW_NAME"; then
   if [ "$current_window_name" = "$WINDOW_NAME" ]; then
-    tmux last-window
+    if ! tmux last-window 2>/dev/null; then
+      tmux new-window
+    fi
   else
     tmux select-window -t "$window_target"
   fi
