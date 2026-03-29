@@ -10,6 +10,7 @@ jq -j --arg user "$USER" '
   .pinnedApps = [
   "firefox",
   "com.mitchellh.ghostty",
+  "nvim",
   "code",
   "com.qq.weixin",
   "qq",
