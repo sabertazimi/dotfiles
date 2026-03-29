@@ -6,8 +6,7 @@ binds {
     // === Application Launchers ===
     Mod+B hotkey-overlay-title="Web Browser" { spawn "firefox"; }
     Mod+D hotkey-overlay-title="Application Launcher" { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
-    Mod+E hotkey-overlay-title="File Explorer" { spawn "nautilus"; }
-    Mod+M hotkey-overlay-title="Music Player" { spawn "/opt/SPlayer/SPlayer"; }
+    Mod+E hotkey-overlay-title="File Explorer" { spawn "ghostty" "-e" "yazi"; }
     Mod+N hotkey-overlay-title="Notification Center" { spawn "dms" "ipc" "call" "notifications" "toggle"; }
     Mod+T hotkey-overlay-title="Open Terminal" { spawn "ghostty"; }
     Mod+X hotkey-overlay-title="Power Menu: Toggle" { spawn "dms" "ipc" "call" "powermenu" "toggle"; }
