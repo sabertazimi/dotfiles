@@ -12,8 +12,8 @@ jq -j --arg user "$USER" '
   "com.mitchellh.ghostty",
   "nvim",
   "code",
-  "com.qq.weixin",
   "qq",
+  "com.qq.weixin",
   "wps-office-prometheus",
   "steam"
 ] |
