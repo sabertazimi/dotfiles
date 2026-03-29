@@ -6,13 +6,3 @@ window-rule {
     match app-id="^firefox$"
     open-maximized true
 }
-
-// @id=wr_1772906993272744384 @name=SPlayer
-window-rule {
-    match app-id="^SPlayer$" title="^SPlayer - 桌面歌词$"
-    open-floating true
-    default-column-width { fixed 640; }
-    default-window-height { fixed 140; }
-    max-width 640
-    max-height 140
-}
