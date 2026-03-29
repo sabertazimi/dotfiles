@@ -230,7 +230,7 @@ skipInvalidTracks = false
 # 是否将播放状态上报回网易云音乐（“听歌排行”）
 # 注意：可能存在风控风险
 [reporter.netease]
-enable = false
+enable = true
 
 # 上报至 Last.fm
 [reporter.lastfm]
