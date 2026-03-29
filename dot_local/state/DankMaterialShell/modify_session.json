@@ -11,7 +11,6 @@ jq -j --arg user "$USER" '
   "firefox",
   "com.mitchellh.ghostty",
   "code",
-  "SPlayer",
   "com.qq.weixin",
   "qq",
   "wps-office-prometheus",
