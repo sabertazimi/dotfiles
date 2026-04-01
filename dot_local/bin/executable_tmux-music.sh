@@ -58,6 +58,6 @@ fi
 
 # Open current playlist.
 tmux select-pane -t "$musicfox_pane"
-sleep "${TMUX_MUSICFOX_JUMP_DELAY:-1}"
+sleep "${TMUX_MUSICFOX_JUMP_DELAY:-2}"
 tmux send-keys -t "$musicfox_pane" b
 tmux send-keys -t "$musicfox_pane" c
