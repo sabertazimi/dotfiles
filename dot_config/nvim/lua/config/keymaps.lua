@@ -41,6 +41,7 @@ wk.add({
     icon = " ",
     mode = { "n", "t" },
   },
-  { "<C-/>", "gcc", desc = "Toggle comment line", mode = { "n", "v" }, remap = true },
+  { "<C-/>", "gcc", desc = "Toggle Comment Line", mode = { "n", "v" }, remap = true },
   { "<C-_>", "gcc", mode = { "n", "v" }, hidden = true, remap = true },
+  { "<C-C>", "<C-[>", desc = "Exit Insert Mode (Trigger Events)", mode = "i" },
 })
