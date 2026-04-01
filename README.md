@@ -31,6 +31,7 @@ Hackable personal dotfiles managed with [`chezmoi`](https://github.com/twpayne/c
 ![Dank Material Shell](./.github/screenshots/dms.webp)
 ![Niri](./.github/screenshots/niri.webp)
 ![Ghostty](./.github/screenshots/ghostty.webp)
+![Tmux](./.github/screenshots/tmux.webp)
 
 ## Installation
 
