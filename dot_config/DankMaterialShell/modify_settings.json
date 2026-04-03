@@ -17,6 +17,7 @@ jq -j '
       .transparency = 0 | .widgetTransparency = 1
     else . end
   ) |
+  .showOccupiedWorkspacesOnly = true |
   .notificationRules = [
   {
     "enabled": true,
