@@ -142,6 +142,7 @@ alias paco="pacman-owns.sh"
 alias pacu="paru -Qu | awk '{print \$1}' | paru -Qi - | cat"
 
 # CLI aliases
+alias cl="clear"
 alias help="tldr"
 alias cat="bat"
 alias ls="eza --icons --group-directories-first"
