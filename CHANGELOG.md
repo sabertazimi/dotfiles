@@ -2,6 +2,42 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.6.0](https://github.com/sabertazimi/dotfiles/compare/v1.5.0...v1.6.0) (2026-04-09)
+
+
+### Features
+
+* **desktop:** add nvim to pinned apps ([5f41d59](https://github.com/sabertazimi/dotfiles/commit/5f41d5914a1764a2f653a12df27814118d647e32))
+* **desktop:** remove loupe and SPlayer ([eff2055](https://github.com/sabertazimi/dotfiles/commit/eff2055323727875dc9e392e3ad3b9c3767cc325))
+* **desktop:** set yazi as default directory handler ([812ba29](https://github.com/sabertazimi/dotfiles/commit/812ba2966d6b35eead33caa5a035c9177e789f57))
+* **imv:** add previous/next navigation key bindings ([b681995](https://github.com/sabertazimi/dotfiles/commit/b68199515e7f142bc208bc1075f9a88c5131b93a))
+* **mime:** use `imv-dir` for image file associations ([4d452e4](https://github.com/sabertazimi/dotfiles/commit/4d452e476d4bae39ac91855b9e9fe9d64be51b66))
+* **music:** enable `NetEase` play reporter ([8aff79c](https://github.com/sabertazimi/dotfiles/commit/8aff79cfaa55df8ac06fe994569bb0025de613c6))
+* **niri:** use yazi terminal file manager, drop SPlayer keybind ([ef40d09](https://github.com/sabertazimi/dotfiles/commit/ef40d097b7bc9474af6d4174aab0604367d79171))
+* **nvim:** disable LSP progress `noice` ([d067b2e](https://github.com/sabertazimi/dotfiles/commit/d067b2e0154a48cd14065ca918cf49c46a18bc7d))
+* **nvim:** map `Ctrl+C` to `Ctrl+[` in insert mode to trigger `InsertLeave` event ([f888fed](https://github.com/sabertazimi/dotfiles/commit/f888fedcac497200f8bf6a412bc8122861ea7132))
+* **nvim:** set up Java tree sitter ([1789605](https://github.com/sabertazimi/dotfiles/commit/17896059398e9b151d78be8553a66642dc308946))
+* **shell:** set bar transparency to 0.85 and disable widget transparency ([a5d197a](https://github.com/sabertazimi/dotfiles/commit/a5d197a351200acb912fbcb2fcb490b17cea23e6))
+* **shell:** show occupied workspaces only in Dank Material Shell ([e5b054a](https://github.com/sabertazimi/dotfiles/commit/e5b054a70db93a579f23d8fdfecb799b7a7c96e5))
+* **zsh:** add `dvim` alias for `chezmoi` edit ([070e42a](https://github.com/sabertazimi/dotfiles/commit/070e42a7029d01ffc9aac6a49d149425c939c598))
+* **zsh:** add `gpot` alias for `git push origin --follow-tags` ([a79116b](https://github.com/sabertazimi/dotfiles/commit/a79116bbee573a3f2e3bed20bbe7a56b7d174797))
+* **zsh:** add `gtd` alias for `git tag --delete` ([f79bf75](https://github.com/sabertazimi/dotfiles/commit/f79bf75ec3ccb90040ac8d7a51311b883ee1bf0c))
+* **zsh:** add cl alias for clear ([9690f83](https://github.com/sabertazimi/dotfiles/commit/9690f83fdd7ed5d5b662e6cd575c41c93286fd33))
+* **zsh:** set `FZF_CTRL_T_COMMAND` to use `fd` ([2968904](https://github.com/sabertazimi/dotfiles/commit/29689044c3d03d00b7677bf5e4251dc522256e00))
+
+
+### Bug Fixes
+
+* **desktop:** change app order in dock ([06cc0f8](https://github.com/sabertazimi/dotfiles/commit/06cc0f8e56ff3ef62593400d71ea0649e5922eec))
+* **go-musicfox:** increase cache limit to 10GB ([8a641dd](https://github.com/sabertazimi/dotfiles/commit/8a641dd9f35cd20f69927a8acb71393652c3e069))
+* **niri:** remove window rule for SPlayer ([b176a88](https://github.com/sabertazimi/dotfiles/commit/b176a885e48ebaaeec0eba7c4a1ffdb6b5571d02))
+* **nvim:** use visual-mode comment mapping for `<C-/>` ([1e042b6](https://github.com/sabertazimi/dotfiles/commit/1e042b6d86f34b31820604dc53685d1d767bb0b4))
+* **tmux:** create new window when last-window fails ([c607df3](https://github.com/sabertazimi/dotfiles/commit/c607df30627a8e635b883588b4d7c15007a1fba3))
+* **tmux:** increase default music fox jump delay to 2s ([354ce03](https://github.com/sabertazimi/dotfiles/commit/354ce03d07c1479318e7c281bdc09489f3ab1973))
+* **tmux:** jump to playlist before opening in music fox ([53a22cf](https://github.com/sabertazimi/dotfiles/commit/53a22cf6fd64f839e4fc13da4e3e271df6007f7f))
+* **zsh:** sort CLI aliases ([e05ad1f](https://github.com/sabertazimi/dotfiles/commit/e05ad1f117116e0d75c99d01d5151e3ed6df3696))
+* **zsh:** sort CLI aliases ([9ce49cb](https://github.com/sabertazimi/dotfiles/commit/9ce49cb2a9cecbd8ffa709ed40411a0cc9b1a075))
+
 ## [1.5.0](https://github.com/sabertazimi/dotfiles/compare/v1.4.0...v1.5.0) (2026-03-26)
 
 

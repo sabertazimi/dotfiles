@@ -1,7 +1,7 @@
 {
   "name": "@dg-scripts/dotfiles",
   "type": "module",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "private": true,
   "packageManager": "pnpm@10.30.0",
   "description": "Hackable personal dotfiles managed with chezmoi",
