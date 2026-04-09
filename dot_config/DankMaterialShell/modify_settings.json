@@ -14,7 +14,7 @@ jq -j '
   .weatherEnabled = true |
   .barConfigs |= map(
     if .id == "default" or .id == null then
-      .transparency = 0 | .widgetTransparency = 1
+      .transparency = 0.85 | .widgetTransparency = 0
     else . end
   ) |
   .showOccupiedWorkspacesOnly = true |
