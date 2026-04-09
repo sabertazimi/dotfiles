@@ -14,6 +14,7 @@ FILES=(
   "$HOME/.config/ghostty/config"
   "$HOME/.config/go/env"
   "$HOME/.config/go-musicfox/config.toml"
+  "$HOME/.config/imv/config"
   "$HOME/.config/matugen/config.toml"
   "$HOME/.config/matugen/templates/cava.ini"
   "$HOME/.config/matugen/templates/starship.toml"

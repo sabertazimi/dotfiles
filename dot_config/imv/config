@@ -1,0 +1,3 @@
+[binds]
+b = prev
+n = next
