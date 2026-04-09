@@ -182,6 +182,7 @@ alias occ="opencode -c"
 
 # Git workflow
 alias gan="git add -N"
+alias gpot="git push origin --follow-tags"
 alias gtd="git tag --delete"
 
 # GitHub workflow
