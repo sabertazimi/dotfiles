@@ -24,7 +24,7 @@ jq -j '
     "field": "appName",
     "pattern": "Firefox",
     "matchType": "exact",
-    "action": "mute",
+    "action": "ignore",
     "urgency": "default"
   }
 ] |
