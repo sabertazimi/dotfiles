@@ -181,6 +181,7 @@ alias oc="opencode"
 alias occ="opencode -c"
 
 # Git workflow
+alias lg="lazygit"
 alias gan="git add -N"
 alias gpot="git push origin --follow-tags"
 alias gtd="git tag --delete"
