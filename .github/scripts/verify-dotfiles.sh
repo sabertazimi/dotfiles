@@ -21,6 +21,7 @@ FILES=(
   "$HOME/.config/matugen/templates/starship.toml"
   "$HOME/.config/matugen/templates/tmux.conf"
   "$HOME/.config/mimeapps.list"
+  "$HOME/.config/mpd/mpd.conf"
   "$HOME/.config/mpv/mpv.conf"
   "$HOME/.config/niri/config.kdl"
   "$HOME/.config/niri/dms/binds.kdl"

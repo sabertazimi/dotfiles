@@ -175,13 +175,13 @@ mp3Decoder = "go-mp3"
 bin = "mpd"
 # mpd配置文件的路径
 # 注意：配置文件中必须设置 pid_file，否则应用退出时无法正确关闭 mpd 进程
-configFile = ""
+configFile = "/home/sabertaz/.config/mpd/mpd.conf"
 # 与mpd服务的连接方式，可选: "tcp", "unix"
 network = "unix"
 # 连接地址
 # network 为 "tcp" 时，填写 "ip:port" (如 "127.0.0.1:6600")
 # network 为 "unix" 时，填写 socket 文件路径
-addr = ""
+addr = "/home/sabertaz/.config/mpd/socket"
 # 是否在需要时自动启动 mpd 服务
 autoStart = true
 
