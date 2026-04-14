@@ -18,6 +18,7 @@ FILES=(
   "$HOME/.config/lazygit/config.yml"
   "$HOME/.config/matugen/config.toml"
   "$HOME/.config/matugen/templates/cava.ini"
+  "$HOME/.config/matugen/templates/modernz.conf"
   "$HOME/.config/matugen/templates/starship.toml"
   "$HOME/.config/matugen/templates/tmux.conf"
   "$HOME/.config/mimeapps.list"

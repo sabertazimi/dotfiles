@@ -5,6 +5,10 @@ input_path = '~/.config/matugen/templates/cava.ini'
 output_path = '~/.config/cava/themes/matugen'
 post_hook = 'pkill -USR2 cava || true'
 
+[templates.mpv]
+input_path = '~/.config/matugen/templates/modernz.conf'
+output_path = '~/.config/mpv/script-opts/modernz.conf'
+
 [templates.starship]
 input_path = '~/.config/matugen/templates/starship.toml'
 output_path = '~/.config/starship.toml'
