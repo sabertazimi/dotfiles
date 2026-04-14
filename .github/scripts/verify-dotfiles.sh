@@ -24,6 +24,7 @@ FILES=(
   "$HOME/.config/mimeapps.list"
   "$HOME/.config/mpd/mpd.conf"
   "$HOME/.config/mpv/mpv.conf"
+  "$HOME/.config/mpv/script-opts/thumbfast.conf"
   "$HOME/.config/niri/config.kdl"
   "$HOME/.config/niri/dms/binds.kdl"
   "$HOME/.config/niri/dms/windowrules.kdl"
