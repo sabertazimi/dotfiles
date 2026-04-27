@@ -1,8 +1,22 @@
 // DMS Window Rules - Managed by DankMaterialShell
 // Do not edit manually - changes may be overwritten
 
-// @id=wr_1772182841398209927 @name=firefox
 window-rule {
     match app-id="^firefox$"
     open-maximized true
+}
+
+window-rule {
+    match app-id="^org.quickshell$"
+    match app-id="^org.gnome.Nautilus$"
+    opacity 0.85
+}
+
+window-rule {
+    match app-id="^org.quickshell$"
+    match app-id="^org.gnome.Nautilus$"
+    match app-id="com.mitchellh.ghostty"
+    background-effect {
+        blur true
+    }
 }
