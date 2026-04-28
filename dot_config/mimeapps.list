@@ -34,6 +34,7 @@ inode/directory=yazi.desktop
 application/vnd.microsoft.portable-executable=wine.desktop
 application/x-msdownload=wine.desktop
 x-scheme-handler/ccswitch=cc-switch-handler.desktop
+x-scheme-handler/claude-cli=claude-code-url-handler.desktop
 
 [Added Associations]
 x-scheme-handler/http=firefox.desktop;
