@@ -9,7 +9,7 @@ if [ -f "$PIDFILE" ]; then
   if kill -0 "$PID" 2>/dev/null; then
     kill "$PID"
     rm "$PIDFILE"
-    notify-send "Macro" "Stopped"
+    dms ipc call toast infoWith "Macro Stopped" "" "" "macro"
     exit 0
   fi
   rm "$PIDFILE"
@@ -34,4 +34,4 @@ release_keys() {
 ) &
 
 echo $! >"$PIDFILE"
-notify-send "Macro" "Started"
+dms ipc call toast infoWith "Macro Started" "" "" "macro"
