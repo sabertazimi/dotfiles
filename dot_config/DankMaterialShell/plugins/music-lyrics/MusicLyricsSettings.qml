@@ -51,47 +51,4 @@ PluginSettings {
             }
         }
     }
-
-    StyledRect {
-        width: parent.width
-        height: behaviorColumn.implicitHeight + Theme.spacingL * 2
-        radius: Theme.cornerRadius
-        color: Theme.surfaceContainerHigh
-
-        Column {
-            id: behaviorColumn
-            anchors.fill: parent
-            anchors.margins: Theme.spacingL
-            spacing: Theme.spacingM
-
-            StyledText {
-                text: "Navidrome"
-                font.pixelSize: Theme.fontSizeMedium
-                font.weight: Font.Medium
-                color: Theme.surfaceText
-            }
-
-            StringSetting {
-                settingKey: "navidromeUrl"
-                label: "Server URL"
-                description: "The full address of your instance."
-                placeholder: "https://music.example.com:4533"
-                defaultValue: ""
-            }
-
-            StringSetting {
-                settingKey: "navidromeUser"
-                label: "Username"
-                placeholder: "username"
-                defaultValue: ""
-            }
-
-            StringSetting {
-                settingKey: "navidromePassword"
-                label: "Password"
-                placeholder: "password"
-                defaultValue: ""
-            }
-        }
-    }
 }

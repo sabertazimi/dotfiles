@@ -10,8 +10,7 @@ improving coverage for non-English (especially CJK) songs.
 
 The plugin searches for synced lyrics in the following order:
 
-1. Cache: local file cache (`~/.cache/musicLyrics/`)
-2. `Navidrome`: self-hosted Subsonic API (requires configuration)
+1. `MPRIS`: player metadata via `xesam:asText` (instant, no network)
+2. Cache: local file cache (`~/.cache/music-lyrics/`)
 3. `lrclib`: [lrclib.net](https://lrclib.net) open lyrics database
 4. `NetEase`: [NetEase Cloud Music](https://music.163.com) (网易云音乐)
-5. `Musixmatch`: Musixmatch desktop API
