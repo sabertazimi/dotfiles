@@ -2,6 +2,35 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.7.0](https://github.com/sabertazimi/dotfiles/compare/v1.6.0...v1.7.0) (2026-05-09)
+
+
+### Features
+
+* **dms:** add music-lyrics plugin with multi-source synced lyrics ([a7c4e3b](https://github.com/sabertazimi/dotfiles/commit/a7c4e3b18adfdc2172cc5e3beb328cb5a41237f7))
+* **dms:** add plugin settings to enable music-lyrics ([bd6e5d1](https://github.com/sabertazimi/dotfiles/commit/bd6e5d130dca9adb605cf4b77de489fd1e914aa0))
+* **dms:** use MPRIS metadata as primary lyrics source ([7bb6fdd](https://github.com/sabertazimi/dotfiles/commit/7bb6fddbed9d9f0029fb1dc2395a58e7c1033d1e))
+* **git:** `lazygit` delta pager and key binding config ([9ea10fa](https://github.com/sabertazimi/dotfiles/commit/9ea10fa234a6b2801556002456a8b178cbc1298b))
+* **macro:** support interval-based key sequences with multi-line config ([d85f64c](https://github.com/sabertazimi/dotfiles/commit/d85f64cd58d9e5d427140abc6c589c5adad9bbe2))
+* **mime:** register `claude-cli` URL scheme handler ([56afb0d](https://github.com/sabertazimi/dotfiles/commit/56afb0d458cceed4aeea60704382058c8f2b0137))
+* **mpv:** add `thumbfast` config and enable borderless playback ([25ab636](https://github.com/sabertazimi/dotfiles/commit/25ab636281b326d8abe6a8352153eddf26aab30d))
+* **mpv:** set up `ModernZ` on screen controller ([1c73f6b](https://github.com/sabertazimi/dotfiles/commit/1c73f6b7176de90cea9a685de16a431b6020aa84))
+* **music:** add `MPD` configuration and integrate with music fox ([6a1898d](https://github.com/sabertazimi/dotfiles/commit/6a1898d9b7eea188d06a26a04ea54862d9fc7036))
+* **music:** increase MPD audio buffer size and pre-buffer ratio ([bde97b8](https://github.com/sabertazimi/dotfiles/commit/bde97b85d2b2a0a085ddebee02f5b38cca6d7e98))
+* **niri:** add mouse-back macro toggle for key spam ([2b601a3](https://github.com/sabertazimi/dotfiles/commit/2b601a38bce3efc5f59386006eda479b1f6ac372))
+* **niri:** configure transparency and blur for popups and windows ([6e4b246](https://github.com/sabertazimi/dotfiles/commit/6e4b24638a43f17f377832b3d3f42c4a87bb7a1f))
+* **nvim:** enable `catppuccin` with transparent background ([922ab94](https://github.com/sabertazimi/dotfiles/commit/922ab94d62463804d45d9a1a7737666a8139c444))
+
+
+### Bug Fixes
+
+* **git:** prevent `lazygit` delta pager from reading default `gitconfig` ([8dcd748](https://github.com/sabertazimi/dotfiles/commit/8dcd74843e6b544398680847d30408ef7f8db57a))
+* **macro:** release keys on exit and add toggle notifications ([5c092b5](https://github.com/sabertazimi/dotfiles/commit/5c092b5953942a9cdf42731bb99ed0cc53a2b830))
+* **macro:** use DMS toast instead of notify-send for multi-monitor support ([4375559](https://github.com/sabertazimi/dotfiles/commit/4375559cb98eb1164cf01802230fabf4ff1d8e9e))
+* **music:** disable cava pane in music window ([bbb9cbe](https://github.com/sabertazimi/dotfiles/commit/bbb9cbeb5669c0c6bb2370e00b71815932c9b4dc))
+* **niri:** remove mouse-back macro keybind ([6b1f36e](https://github.com/sabertazimi/dotfiles/commit/6b1f36e2f233034fcf176028739f1e63971a9538))
+* **shell:** change Firefox notification action from mute to ignore ([e81dc5d](https://github.com/sabertazimi/dotfiles/commit/e81dc5dbdf1fa83f70cb6fb7b37088721aea9f09))
+
 ## [1.6.0](https://github.com/sabertazimi/dotfiles/compare/v1.5.0...v1.6.0) (2026-04-09)
 
 
