@@ -15,7 +15,6 @@ binds {
     Mod+Shift+N hotkey-overlay-title="Notepad" { spawn "dms" "ipc" "call" "notepad" "toggle"; }
     Mod+Shift+S hotkey-overlay-title="Settings" { spawn "dms" "ipc" "call" "settings" "focusOrToggle"; }
     Mod+Shift+T hotkey-overlay-title="Task Manager" { spawn "dms" "ipc" "call" "processlist" "focusOrToggle"; }
-    MouseBack { spawn "~/.local/bin/macro.sh"; }
 
     // === Security ===
     Mod+Alt+L hotkey-overlay-title="Lock Screen" {
