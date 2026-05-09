@@ -2,11 +2,16 @@
   "id": "music-lyrics",
   "name": "Music Lyrics",
   "description": "Display synced music lyrics from multiple sources",
-  "version": "1.4.0",
-  "author": "gasiyu",
+  "version": "1.0.0",
+  "author": "sabertaz",
   "icon": "lyrics",
   "type": "widget",
   "component": "./MusicLyrics.qml",
   "settings": "./MusicLyricsSettings.qml",
-  "permissions": ["settings_read", "settings_write", "process", "network"]
+  "permissions": [
+    "settings_read",
+    "settings_write",
+    "process",
+    "network"
+  ]
 }

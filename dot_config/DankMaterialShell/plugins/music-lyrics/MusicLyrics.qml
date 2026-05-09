@@ -13,7 +13,6 @@ PluginComponent {
     property bool cachingEnabled: pluginData.cachingEnabled ?? true
 
     readonly property MprisPlayer activePlayer: MprisController.activePlayer
-    property var allPlayers: MprisController.availablePlayers
 
     // -------------------------------------------------------------------------
     // Enum namespaces
@@ -135,8 +134,6 @@ PluginComponent {
     onCurrentTitleChanged: fetchDebounceTimer.restart()
     onCurrentArtistChanged: fetchDebounceTimer.restart()
 
-    // Force-update toggle to poll MPRIS position
-    property bool _forceUpdate: false
 
     // -------------------------------------------------------------------------
     // Helpers
@@ -311,7 +308,7 @@ PluginComponent {
         var capturedTitle = currentTitle;
         var capturedArtist = currentArtist;
 
-        // 1. Try MPRIS metadata first (instant, no network)
+        // 1. Try MPRIS metadata first
         var mprisLyricsText = "";
         if (activePlayer && activePlayer.metadata) {
             mprisLyricsText = activePlayer.metadata["xesam:asText"] || "";
@@ -822,258 +819,41 @@ PluginComponent {
     }
 
     // -------------------------------------------------------------------------
-    // Popout: Now Playing + Lyrics Sources
+    // Popout: Lyrics Sources
     // -------------------------------------------------------------------------
-
-    function _formatDuration(seconds) {
-        if (seconds <= 0) return "—";
-        var m = Math.floor(seconds / 60);
-        var s = Math.floor(seconds % 60);
-        return m + ":" + ("0" + s).slice(-2);
-    }
 
     popoutContent: Component {
         PopoutComponent {
-            headerText: "Music Lyrics"
-
-            Item {
+            Column {
                 width: parent.width
-                implicitHeight: popoutLayout.implicitHeight
+                spacing: Theme.spacingS
 
-                Column {
-                    id: popoutLayout
+                SourceCard {
                     width: parent.width
-                    spacing: Theme.spacingM
+                    icon: "music_note"
+                    label: "MPRIS"
+                    sourceStatus: root.mprisStatus
+                }
 
-                    // ── Now Playing Card ──
-                    Rectangle {
-                        width: parent.width
-                        height: nowPlayingContent.implicitHeight + Theme.spacingM * 2
-                        radius: Theme.cornerRadius
-                        color: root.activePlayer
-                              ? Theme.withAlpha(Theme.primary, 0.08)
-                              : Theme.withAlpha(Theme.surfaceContainerHighest, 0.5)
+                SourceCard {
+                    width: parent.width
+                    icon: "cached"
+                    label: "Cache"
+                    sourceStatus: root.cacheStatus
+                }
 
-                        Row {
-                            id: nowPlayingContent
-                            anchors {
-                                left: parent.left; right: parent.right
-                                top: parent.top
-                                margins: Theme.spacingM
-                            }
-                            spacing: Theme.spacingM
+                SourceCard {
+                    width: parent.width
+                    icon: "library_music"
+                    label: "lrclib"
+                    sourceStatus: root.lrclibStatus
+                }
 
-                            // Track info column (takes remaining space)
-                            Column {
-                                width: _coverArt.visible
-                                       ? parent.width - _coverArt.width - parent.spacing
-                                       : parent.width
-                                spacing: Theme.spacingS
-
-                                // Header row: icon + "Now Playing"
-                                Row {
-                                    spacing: Theme.spacingS
-                                    width: parent.width
-
-                                    DankIcon {
-                                        name: root.activePlayer && root.activePlayer.playbackState === MprisPlaybackState.Playing
-                                              ? "play_circle" : "pause_circle"
-                                        size: 20
-                                        color: root.activePlayer ? Theme.primary : Theme.surfaceVariantText
-                                        anchors.verticalCenter: parent.verticalCenter
-                                    }
-
-                                    StyledText {
-                                        text: root.activePlayer ? "Now Playing - " + (root.activePlayer.identity || "Unknown Player") : "No Active Player"
-                                        font.pixelSize: Theme.fontSizeSmall
-                                        font.weight: Font.DemiBold
-                                        color: root.activePlayer ? Theme.primary : Theme.surfaceVariantText
-                                        anchors.verticalCenter: parent.verticalCenter
-                                    }
-                                }
-
-                                // Song title
-                                StyledText {
-                                    width: parent.width
-                                    text: root.currentTitle || "—"
-                                    font.pixelSize: Theme.fontSizeLarge + 2
-                                    font.weight: Font.Bold
-                                    color: Theme.surfaceText
-                                    maximumLineCount: 2
-                                    elide: Text.ElideRight
-                                    wrapMode: Text.WordWrap
-                                    visible: root.activePlayer
-                                }
-
-                                // Artist & Album
-                                Column {
-                                    width: parent.width
-                                    spacing: 2
-                                    visible: root.activePlayer
-
-                                    Row {
-                                        spacing: Theme.spacingXS
-                                        DankIcon {
-                                            name: "person"
-                                            size: 14
-                                            color: Theme.surfaceVariantText
-                                            anchors.verticalCenter: parent.verticalCenter
-                                        }
-                                        StyledText {
-                                            text: root.currentArtist || "Unknown Artist"
-                                            font.pixelSize: Theme.fontSizeMedium
-                                            color: Theme.surfaceText
-                                            anchors.verticalCenter: parent.verticalCenter
-                                            maximumLineCount: 1
-                                            elide: Text.ElideRight
-                                        }
-                                    }
-
-                                    Row {
-                                        spacing: Theme.spacingXS
-                                        visible: root.currentAlbum !== ""
-                                        DankIcon {
-                                            name: "album"
-                                            size: 14
-                                            color: Theme.surfaceVariantText
-                                            anchors.verticalCenter: parent.verticalCenter
-                                        }
-                                        StyledText {
-                                            text: root.currentAlbum
-                                            font.pixelSize: Theme.fontSizeSmall
-                                            color: Theme.surfaceVariantText
-                                            anchors.verticalCenter: parent.verticalCenter
-                                            maximumLineCount: 1
-                                            elide: Text.ElideRight
-                                        }
-                                    }
-                                }
-
-                                // Progress bar with timestamps
-                                Column {
-                                    width: parent.width
-                                    spacing: 4
-                                    visible: root.activePlayer && root.currentDuration > 0
-
-                                    DankSeekbar {
-                                        id: progressSeekbar
-                                        width: parent.width
-                                        height: 20
-                                        anchors.horizontalCenter: parent.horizontalCenter
-                                        activePlayer: root.activePlayer
-                                    }
-
-                                    // Poll MPRIS position to keep seekbar and time text updated
-                                    Timer {
-                                        interval: 50
-                                        running: root.activePlayer !== null
-                                        repeat: true
-                                        onTriggered: {
-                                            if (progressSeekbar && root.activePlayer) {
-                                                try {
-                                                    var pos = root.activePlayer.position || 0;
-                                                    var len = Math.max(1, root.activePlayer.length || 1);
-                                                    progressSeekbar.value = Math.min(1, pos / len);
-                                                } catch (e) {}
-                                            }
-                                            root._forceUpdate = !root._forceUpdate;
-                                        }
-                                    }
-
-                                    Row {
-                                        width: parent.width
-
-                                        StyledText {
-                                            id: _currentTime
-                                            text: {
-                                                void root._forceUpdate; // depend on polling toggle
-                                                if (!activePlayer)
-                                                    return "0:00";
-                                                const rawPos = Math.max(0, activePlayer.position || 0);
-                                                const pos = activePlayer.length ? rawPos % Math.max(1, activePlayer.length) : rawPos;
-                                                const minutes = Math.floor(pos / 60);
-                                                const seconds = Math.floor(pos % 60);
-                                                const timeStr = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
-                                                return timeStr;
-                                            }
-                                            font.pixelSize: Theme.fontSizeSmall - 1
-                                            color: Theme.surfaceVariantText
-                                        }
-
-                                        Item { width: parent.width - _currentTime.implicitWidth - _endTime.implicitWidth; height: 1 }
-
-                                        StyledText {
-                                            id: _endTime
-                                            text: {
-                                                if (!activePlayer || !activePlayer.length)
-                                                    return "0:00";
-                                                const dur = Math.max(0, activePlayer.length || 0);
-                                                const minutes = Math.floor(dur / 60);
-                                                const seconds = Math.floor(dur % 60);
-                                                return minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
-                                            }
-                                            font.pixelSize: Theme.fontSizeSmall - 1
-                                            color: Theme.surfaceVariantText
-                                        }
-                                    }
-                                }
-                            }
-
-                            // Album cover art
-                            DankAlbumArt {
-                                id: _coverArt
-                                width: 80
-                                height: 80
-                                visible: root.activePlayer && (root.activePlayer.trackArtUrl ?? "") !== ""
-                                anchors.verticalCenter: parent.verticalCenter
-                                activePlayer: root.activePlayer
-                                showAnimation: true
-                            }
-                        }
-                    }
-
-                    // ── Section label ──
-                    StyledText {
-                        text: "Lyrics Sources"
-                        font.pixelSize: Theme.fontSizeSmall
-                        font.weight: Font.DemiBold
-                        color: Theme.surfaceVariantText
-                        leftPadding: Theme.spacingXS
-                    }
-
-                    // ── Source Cards ──
-                    Column {
-                        width: parent.width
-                        spacing: Theme.spacingS
-
-                        SourceCard {
-                            width: parent.width
-                            icon: "music_note"
-                            label: "MPRIS"
-                            sourceStatus: root.mprisStatus
-                        }
-
-                        SourceCard {
-                            width: parent.width
-                            icon: "cached"
-                            label: "Cache"
-                            sourceStatus: root.cacheStatus
-                        }
-
-                        SourceCard {
-                            width: parent.width
-                            icon: "library_music"
-                            label: "lrclib"
-                            sourceStatus: root.lrclibStatus
-                        }
-
-                        SourceCard {
-                            width: parent.width
-                            icon: "cloud"
-                            label: "NetEase"
-                            sourceStatus: root.neteaseStatus
-                        }
-                    }
+                SourceCard {
+                    width: parent.width
+                    icon: "cloud"
+                    label: "NetEase"
+                    sourceStatus: root.neteaseStatus
                 }
             }
         }
@@ -1188,8 +968,8 @@ PluginComponent {
         }
     }
 
-    popoutWidth: 380
-    popoutHeight: 520
+    popoutWidth: 340
+    popoutHeight: 220
 
     Component.onCompleted: {
         console.info("[MusicLyrics] Plugin loaded");
