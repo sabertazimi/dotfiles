@@ -6,6 +6,7 @@ FILES=(
   "$HOME/.claude/plugins/claude-hud/config.json"
   "$HOME/.config/cava/config"
   "$HOME/.config/chezmoi/chezmoi.toml"
+  "$HOME/.config/DankMaterialShell/plugin_settings.json"
   "$HOME/.config/DankMaterialShell/settings.json"
   "$HOME/.config/DankMaterialShell/plugins/music-lyrics/MusicLyrics.qml"
   "$HOME/.config/DankMaterialShell/plugins/music-lyrics/MusicLyricsSettings.qml"
