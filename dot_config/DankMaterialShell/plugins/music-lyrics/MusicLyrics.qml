@@ -57,6 +57,7 @@ PluginComponent {
         readonly property int lrclib: 3
         readonly property int netease: 4
         readonly property int musixmatch: 5
+        readonly property int mpris: 6
     }
 
     // -------------------------------------------------------------------------
@@ -76,6 +77,7 @@ PluginComponent {
     property int lrclibStatus: status.none
     property int neteaseStatus: status.none
     property int musixmatchStatus: status.none
+    property int mprisStatus: status.none
 
     // Fetch state and source
     property int lyricStatus: lyricState.idle
@@ -165,6 +167,7 @@ PluginComponent {
         lrclibStatus = status.none;
         neteaseStatus = status.none;
         musixmatchStatus = status.none;
+        mprisStatus = status.none;
         lyricStatus = lyricState.loading;
         lyricSource = lyricSrc.none;
     }
@@ -333,6 +336,33 @@ PluginComponent {
         var capturedTitle = currentTitle;
         var capturedArtist = currentArtist;
 
+        // 1. Try MPRIS metadata first (instant, no network)
+        var mprisLyricsText = "";
+        if (activePlayer && activePlayer.metadata) {
+            mprisLyricsText = activePlayer.metadata["xesam:asText"] || "";
+        }
+        if (mprisLyricsText.length > 0) {
+            var mprisLines = parseLrc(mprisLyricsText);
+            if (mprisLines.length > 0) {
+                lyricsLines = mprisLines;
+                mprisStatus = status.found;
+                lyricStatus = lyricState.synced;
+                lyricSource = lyricSrc.mpris;
+                cacheStatus = status.skippedFound;
+                navidromeStatus = status.skippedFound;
+                lrclibStatus = status.skippedFound;
+                neteaseStatus = status.skippedFound;
+                musixmatchStatus = status.skippedFound;
+                console.info("[MusicLyrics] ✓ MPRIS: synced lyrics found (" + mprisLines.length + " lines) for \"" + currentTitle + "\"");
+                return;
+            }
+            mprisStatus = status.skippedPlain;
+            console.info("[MusicLyrics] ✗ MPRIS: only plain lyrics found (skipping, synced only)");
+        } else {
+            mprisStatus = status.notFound;
+        }
+
+        // 2. Cache / API fallback
         function _startFetch() {
             if (_configValid) {
                 _fetchFromNavidrome(capturedTitle, capturedArtist);
@@ -1111,7 +1141,7 @@ PluginComponent {
                     }
 
                     StyledText {
-                        text: root.lyricSource === lyricSrc.navidrome ? "Navidrome" : root.lyricSource === lyricSrc.lrclib ? "lrclib" : root.lyricSource === lyricSrc.netease ? "NetEase" : root.lyricSource === lyricSrc.musixmatch ? "Musixmatch" : ""
+                        text: root.lyricSource === lyricSrc.mpris ? "MPRIS" : root.lyricSource === lyricSrc.navidrome ? "Navidrome" : root.lyricSource === lyricSrc.lrclib ? "lrclib" : root.lyricSource === lyricSrc.netease ? "NetEase" : root.lyricSource === lyricSrc.musixmatch ? "Musixmatch" : ""
                         font.pixelSize: Theme.fontSizeSmall
                         color: Theme.background
                         anchors.verticalCenter: parent.verticalCenter
@@ -1381,6 +1411,13 @@ PluginComponent {
                     Column {
                         width: parent.width
                         spacing: Theme.spacingS
+
+                        SourceCard {
+                            width: parent.width
+                            icon: "cast"
+                            label: "MPRIS"
+                            sourceStatus: root.mprisStatus
+                        }
 
                         SourceCard {
                             width: parent.width
