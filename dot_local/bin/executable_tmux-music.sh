@@ -87,7 +87,7 @@ main() {
   toggle_or_exit
 
   tmux new-window -n "$WINDOW_NAME" -c "$current_path" -d 'exec musicfox'
-  setup_cava_pane
+  # setup_cava_pane
   open_playlist
 }
 
