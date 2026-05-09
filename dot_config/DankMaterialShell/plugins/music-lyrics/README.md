@@ -3,7 +3,7 @@
 A DankMaterialShell widget plugin that displays synced music lyrics.
 
 Forked from [@Gasiyu](https://github.com/Gasiyu/dms-plugin-musiclyrics)
-to add MPRIS and NetEase Cloud Music (网易云音乐) as an additional lyrics source,
+to add MPRIS and NetEase Cloud Music (网易云音乐) as additional lyrics sources,
 improving coverage for non-English (especially CJK) songs.
 
 ## Lyrics Sources
