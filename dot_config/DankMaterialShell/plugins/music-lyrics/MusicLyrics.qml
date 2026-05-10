@@ -316,18 +316,24 @@ PluginComponent {
         if (mprisLyricsText.length > 0) {
             var mprisLines = parseLrc(mprisLyricsText);
             if (mprisLines.length > 0) {
-                lyricsLines = mprisLines;
-                mprisStatus = status.found;
-                lyricStatus = lyricState.synced;
-                lyricSource = lyricSrc.mpris;
-                cacheStatus = status.skippedFound;
-                lrclibStatus = status.skippedFound;
-                neteaseStatus = status.skippedFound;
-                console.info("[MusicLyrics] ✓ MPRIS: synced lyrics found (" + mprisLines.length + " lines) for \"" + currentTitle + "\"");
-                return;
+                var instrumental = mprisLines.some(function (l) { return (l.text || "").indexOf("纯音乐，请欣赏") !== -1; });
+                if (mprisLines.length >= 5 || currentDuration <= 30 || instrumental) {
+                    lyricsLines = mprisLines;
+                    mprisStatus = status.found;
+                    lyricStatus = lyricState.synced;
+                    lyricSource = lyricSrc.mpris;
+                    cacheStatus = status.skippedFound;
+                    lrclibStatus = status.skippedFound;
+                    neteaseStatus = status.skippedFound;
+                    console.info("[MusicLyrics] ✓ MPRIS: synced lyrics found (" + mprisLines.length + " lines) for \"" + currentTitle + "\"");
+                    return;
+                }
+                mprisStatus = status.notFound;
+                console.info("[MusicLyrics] ✗ MPRIS: only " + mprisLines.length + " synced lines for " + Math.round(currentDuration) + "s track, falling through");
+            } else {
+                mprisStatus = status.skippedPlain;
+                console.info("[MusicLyrics] ✗ MPRIS: only plain lyrics found (skipping, synced only)");
             }
-            mprisStatus = status.skippedPlain;
-            console.info("[MusicLyrics] ✗ MPRIS: only plain lyrics found (skipping, synced only)");
         } else {
             mprisStatus = status.notFound;
         }
@@ -709,7 +715,7 @@ PluginComponent {
             [status.cacheHit]: {
                 color: Theme.primary,
                 icon: "check_circle",
-                label: "Hit — Lyrics loaded from cache"
+                label: "Hit — Loaded from cache"
             },
             [status.cacheMiss]: {
                 color: Theme.warning,
