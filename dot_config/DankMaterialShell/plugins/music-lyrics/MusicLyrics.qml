@@ -697,12 +697,12 @@ PluginComponent {
                 label: "Error"
             },
             [status.skippedFound]: {
-                color: Theme.warning,
+                color: Theme.surfaceVariantText,
                 icon: "block",
                 label: "Skipped — Already found"
             },
             [status.skippedPlain]: {
-                color: Theme.warning,
+                color: Theme.surfaceVariantText,
                 icon: "block",
                 label: "Skipped — Plain lyrics only"
             },
