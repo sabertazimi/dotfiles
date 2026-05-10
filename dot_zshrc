@@ -135,11 +135,10 @@ bindkey "^X^E" edit-command-line
 
 # Package helpers
 alias yay="paru"
-alias pac="paru -Slq | fzf --multi --preview 'paru -Si {1}' --preview-window=down:75% --layout=reverse | xargs -ro paru -S --needed"
-alias pacr="paru -Qq | fzf --multi --preview 'paru -Qi {1}' --preview-window=down:75% --layout=reverse | xargs -ro paru -Rns"
-alias pacl="paru -Qq | fzf --preview 'paru -Qil {1}' --preview-window=down:75% --layout=reverse --bind 'enter:execute(paru -Qil {} | bat --color=always --paging=always)'"
-alias paco="pacman-owns.sh"
+alias pac="tv aur"
+alias pacl="tv pacman-packages"
 alias pacu="paru -Quq | fzf --multi --preview 'paru -Qi {1}' --preview-window=down:75% --layout=reverse | xargs -ro paru -Su --needed"
+alias paco="pacman-owns.sh"
 
 # CLI aliases
 alias cl="clear"
