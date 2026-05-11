@@ -55,6 +55,7 @@ FILES=(
   "$HOME/.config/nvim/README.md"
   "$HOME/.config/nvim/stylua.toml"
   "$HOME/.config/satty/config.toml"
+  "$HOME/.config/television/config.toml"
   "$HOME/.config/television/cable/aur.toml"
   "$HOME/.config/tmux/tmux.conf"
   "$HOME/.gitmsg.md"

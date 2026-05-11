@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+# Idempotent television config.toml modifier
+# Usage: cat ~/.config/television/config.toml | ./modify_config.toml > ~/.config/television/config.toml.new
+
+content=$(cat)
+
+# Replace or add orientation = "portrait" under [ui]
+if echo "$content" | grep -q '^orientation[[:space:]]*='; then
+  # Replace existing orientation line
+  content=$(echo "$content" | sed 's/^orientation[[:space:]]*=.*/orientation = "portrait"/')
+elif echo "$content" | grep -q '^\[ui\]'; then
+  # Add after [ui] header
+  content=$(echo "$content" | awk '/^\[ui\]/ { print; print "orientation = \"portrait\""; next } { print }')
+else
+  # Append [ui] section
+  content="${content}"$'\n\n[ui]'$'\n''orientation = "portrait"'
+fi
+
+echo "$content"

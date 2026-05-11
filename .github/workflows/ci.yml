@@ -40,10 +40,12 @@ jobs:
         run: |
           mkdir -p ~/.config/cava
           mkdir -p ~/.config/niri
+          mkdir -p ~/.config/television
           mkdir -p ~/.config/DankMaterialShell
           mkdir -p ~/.local/state/DankMaterialShell
           cp .github/fixtures/cava-config.ini ~/.config/cava/config
           cp .github/fixtures/niri-config.kdl ~/.config/niri/config.kdl
+          cp .github/fixtures/television-config.toml ~/.config/television/config.toml
           cp .github/fixtures/dms-settings.json ~/.config/DankMaterialShell/settings.json
           cp .github/fixtures/dms-session.json ~/.local/state/DankMaterialShell/session.json
       - name: Apply dotfiles
