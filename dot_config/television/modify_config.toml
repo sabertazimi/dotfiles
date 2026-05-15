@@ -17,4 +17,10 @@ else
   content="${content}"$'\n\n[ui]'$'\n''orientation = "portrait"'
 fi
 
+# Replace pagedown/pageup with vim-style ctrl-d/ctrl-u
+content=$(echo "$content" | sed 's/^pagedown[[:space:]]*=.*/ctrl-d = "scroll_preview_half_page_down"/')
+content=$(echo "$content" | sed 's/^pageup[[:space:]]*=.*/ctrl-u = "scroll_preview_half_page_up"/')
+# Remove old ctrl-u = "delete_line"
+content=$(echo "$content" | sed '/^ctrl-u[[:space:]]*=.*"delete_line"/d')
+
 echo "$content"
