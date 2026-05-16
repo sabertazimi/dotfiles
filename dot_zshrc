@@ -68,7 +68,6 @@ omz() {
 _tool_init() {
   (( $+commands[uv] )) && eval "$(uv generate-shell-completion zsh)"
   (( $+commands[uvx] )) && eval "$(uvx --generate-shell-completion zsh)"
-  (( $+commands[mise] )) && eval "$(mise activate zsh)"
   (( $+commands[zoxide] )) && eval "$(zoxide init --cmd cd zsh)"
   (( $+commands[tv] )) && eval "$(tv init zsh)"
   (( $+commands[fzf] )) && source <(fzf --zsh)
