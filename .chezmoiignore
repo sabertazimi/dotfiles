@@ -1,13 +1,22 @@
+# Repository files
 AGENTS.md
 CLAUDE.md
 LICENSE
 README.md
 CHANGELOG.md
-themes
-wallpapers
+themes/
+wallpapers/
 
-node_modules
+# Node.js files
+node_modules/
 package.json
 pnpm-lock.yaml
 
+# Harper file
 .harper-dictionary.txt
+
+# Matugen generated files
+.config/cava/themes/matugen
+.config/mpv/script-opts/modernz.conf
+.config/starship.toml
+.config/tmux/theme.conf
