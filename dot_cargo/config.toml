@@ -1,8 +1,8 @@
 [source.crates-io]
-replace-with = 'mirror'
+replace-with = 'tuna'
 
-[source.mirror]
+[source.tuna]
 registry = "sparse+https://mirrors.tuna.tsinghua.edu.cn/crates.io-index/"
 
-[registries.mirror]
+[registries.tuna]
 index = "sparse+https://mirrors.tuna.tsinghua.edu.cn/crates.io-index/"
