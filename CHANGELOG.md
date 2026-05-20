@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.8.0](https://github.com/sabertazimi/dotfiles/compare/v1.7.0...v1.8.0) (2026-05-20)
+
+
+### Features
+
+* **dms:** remove VS Code from dock ([1c00797](https://github.com/sabertazimi/dotfiles/commit/1c00797a96c45806a4e849eeef4bfe93e8b7dae1))
+* **mirrors:** switch mirrors to `Tsinghua` (tuna) ([64dfa9c](https://github.com/sabertazimi/dotfiles/commit/64dfa9cfac6c777d2b932babd07417d4a53be03f))
+* **mpv:** enable save-position-on-quit ([fe3a9eb](https://github.com/sabertazimi/dotfiles/commit/fe3a9eb50803f488a9e54b9d51dbc8bdb56282f6))
+* **tv:** change television ui orientation ([83ef2f9](https://github.com/sabertazimi/dotfiles/commit/83ef2f99c68fff50ad471f0e1ab872d3f1107986))
+* **tv:** use vim-style ctrl-d/ctrl-u for preview scrolling ([faa4a77](https://github.com/sabertazimi/dotfiles/commit/faa4a77ce1e43fcfd7a7af26c0125a3cd77cf153))
+* **zsh:** make `pacu` alias interactive with `fzf` multi-select ([cdf8b3b](https://github.com/sabertazimi/dotfiles/commit/cdf8b3bb81359938cebd47ac0f1ad94ac7ab9c49))
+* **zsh:** remove `codex` and `opencode` aliases ([0efe858](https://github.com/sabertazimi/dotfiles/commit/0efe858f6dd3c2eab96ceaa3c77bec72c3e92fd5))
+* **zsh:** remove `mise` shell activation ([ffc2582](https://github.com/sabertazimi/dotfiles/commit/ffc2582d81f65e306f5e0e9528cc3f9bf4873eca))
+* **zsh:** simplify package aliases with `tv` commands ([f45e045](https://github.com/sabertazimi/dotfiles/commit/f45e045e177f580fc5a937d58358df6357ce528c))
+
+
+### Bug Fixes
+
+* **cargo:** rename mirror source identifiers to tuna ([8ad7461](https://github.com/sabertazimi/dotfiles/commit/8ad7461305b4923a472d58e02d0026db7be8d682))
+* **dms:** skip sparse MPRIS lyrics and fall through to online sources ([8b03c04](https://github.com/sabertazimi/dotfiles/commit/8b03c044c743c6e71d67fbfb32498d5e6dbda0b7))
+* **dms:** use muted gray for skipped lyrics source status ([f7c0a08](https://github.com/sabertazimi/dotfiles/commit/f7c0a08feebc5b5d814fa50cfb7fb38706cfc674))
+
 ## [1.7.0](https://github.com/sabertazimi/dotfiles/compare/v1.6.0...v1.7.0) (2026-05-09)
 
 
