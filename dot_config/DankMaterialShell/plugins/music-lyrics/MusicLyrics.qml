@@ -794,6 +794,7 @@ PluginComponent {
                 font.pixelSize: Theme.fontSizeSmall
                 color: Theme.surfaceText
                 anchors.verticalCenter: parent.verticalCenter
+                wrapMode: Text.NoWrap
                 maximumLineCount: 1
                 elide: Text.ElideRight
                 width: Math.min(implicitWidth, 300)
