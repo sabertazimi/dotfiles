@@ -59,6 +59,7 @@ FILES=(
   "$HOME/.config/television/cable/aur.toml"
   "$HOME/.config/tmux/tmux.conf"
   "$HOME/.gitmsg.md"
+  "$HOME/.local/bin/fzf-preview.sh"
   "$HOME/.local/bin/macro.sh"
   "$HOME/.local/bin/pacman-owns.sh"
   "$HOME/.local/bin/tmux-entry.sh"
