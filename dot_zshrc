@@ -7,6 +7,15 @@ export PATH="$HOME/.local/bin:$PNPM_HOME:$HOME/.cargo/bin:$HOME/go/bin:$PATH"
 export FZF_DEFAULT_COMMAND="fd --type f --strip-cwd-prefix --hidden --follow --exclude .git"
 export FZF_CTRL_T_COMMAND="fd --strip-cwd-prefix --hidden --follow --exclude .git"
 export FZF_DEFAULT_OPTS="--bind 'ctrl-d:preview-half-page-down,ctrl-u:preview-half-page-up,ctrl-/:change-preview-window(down|hidden|)'"
+export FZF_CTRL_T_OPTS="
+  --preview 'bat -n --color=always {}'
+  --bind 'ctrl-y:execute-silent(echo -n {} | wl-copy)+abort'
+  --color header:italic
+  --header 'Press CTRL-Y to copy path'"
+export FZF_CTRL_R_OPTS="
+  --bind 'ctrl-y:execute-silent(echo -n {2..} | wl-copy)+abort'
+  --color header:italic
+  --header 'Press CTRL-Y to copy command'"
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 export UV_PYTHON_INSTALL_MIRROR="https://gh-proxy.com/github.com/indygreg/python-build-standalone/releases/download/"
 export UV_DEFAULT_INDEX="https://pypi.tuna.tsinghua.edu.cn/simple/"
