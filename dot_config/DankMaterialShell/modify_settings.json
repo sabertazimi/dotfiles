@@ -9,6 +9,7 @@ jq -j '
   .matugenTemplateVscode = false |
   .popupTransparency = 0.85 |
   .blurEnabled = true |
+  .blurWallpaperOnOverview = true |
   .iconTheme = "Papirus" |
   .fontFamily = "思源黑体 CN" |
   .monoFontFamily = "Maple Mono NF CN" |
