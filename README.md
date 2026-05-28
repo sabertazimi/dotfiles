@@ -152,13 +152,6 @@ source ~/.bashrc
 
 ![Bash Theme](./.github/screenshots/bash.webp)
 
-## Caveats
-
-Dotfiles not synced:
-
-`~/.gitconfig`, `~/.claude.json`, `~/.claude/settings.json`
-contain keys and dynamically generated content.
-
 ## License
 
 MIT License Copyright (c) [`Sabertaz`](https://github.com/sabertazimi)
