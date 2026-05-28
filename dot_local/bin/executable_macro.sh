@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 PIDFILE="/tmp/macro.pid"
 CONFIG=$(cat ~/.config/macro.ini 2>/dev/null || echo "2 3 4 5 6")
@@ -22,7 +22,7 @@ while IFS= read -r line || [[ -n "$line" ]]; do
   last="${line##* }"
   [[ "$last" =~ ^[0-9]+s$ ]] && line="${line% *}"
   ALL_CODES="$ALL_CODES $line"
-done <<< "$CONFIG"
+done <<<"$CONFIG"
 
 release_keys() {
   for code in $ALL_CODES; do
@@ -63,7 +63,7 @@ release_keys() {
         done
       ) &
     fi
-  done <<< "$CONFIG"
+  done <<<"$CONFIG"
 
   wait
 ) &
