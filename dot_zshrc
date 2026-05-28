@@ -1,6 +1,7 @@
 # Environment
 export EDITOR="nvim"
 export VISUAL="nvim"
+export MANPAGER="bat -l man -p"
 export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$HOME/.local/bin:$PNPM_HOME:$HOME/.cargo/bin:$HOME/go/bin:$PATH"
 export FZF_DEFAULT_COMMAND="fd --type f --strip-cwd-prefix --hidden --follow --exclude .git"
