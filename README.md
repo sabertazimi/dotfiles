@@ -87,7 +87,9 @@ for detailed system configuration.
 
 ### Themes
 
-- `DankMaterialShell`: Material You shell
+- `DankMaterialShell`: Material You shell with custom plugins
+  - `desktop-lyrics`: Desktop overlay showing synced lyrics
+  - `music-lyrics`: Bar widget displaying synced lyrics
 - Matugen: Material You color scheme generator from wallpaper
 
 ## Wallpapers

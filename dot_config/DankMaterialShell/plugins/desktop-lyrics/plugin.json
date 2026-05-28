@@ -1,0 +1,16 @@
+{
+  "id": "desktop-lyrics",
+  "name": "Desktop Lyrics",
+  "description": "Display synced lyrics on desktop with automatic scrolling",
+  "version": "1.0.0",
+  "author": "sabertaz",
+  "icon": "lyrics",
+  "type": "desktop",
+  "component": "./DesktopLyrics.qml",
+  "settings": "./DesktopLyricsSettings.qml",
+  "permissions": [
+    "settings_read",
+    "settings_write",
+    "network"
+  ]
+}

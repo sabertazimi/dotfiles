@@ -1,4 +1,7 @@
 {
+  "desktop-lyrics": {
+    "enabled": false
+  },
   "music-lyrics": {
     "enabled": true
   }
