@@ -12,8 +12,18 @@ line_exists() {
   echo "$content" | grep -qF -- "$line"
 }
 
-# 1. Replace scope="output" with scope="all"
-content="${content//scope=\"output\"/scope=\"all\"}"
+# 1. Add layout always-center-single-column
+if ! line_exists 'always-center-single-column'; then
+  content=$(awk '
+        /^[[:space:]]*layout[[:space:]]*{/ && !center_added {
+            print
+            print "    always-center-single-column"
+            center_added = 1
+            next
+        }
+        { print }
+    ' <<<"$content")
+fi
 
 # 2. Add QT environment variables
 if ! line_exists 'QT_QPA_PLATFORMTHEME "qt6ct"'; then
@@ -44,7 +54,10 @@ if ! line_exists 'LC_CTYPE "en_US.UTF-8"'; then
     ' <<<"$content")
 fi
 
-# 4. Add optional `windowrules` include
+# 4. Replace scope="output" with scope="all"
+content="${content//scope=\"output\"/scope=\"all\"}"
+
+# 5. Add optional `windowrules` include
 if ! line_exists 'include "dms/windowrules.kdl"'; then
   windowrules_file="${XDG_CONFIG_HOME:-$HOME/.config}/niri/dms/windowrules.kdl"
   if [ -f "$windowrules_file" ]; then
@@ -52,12 +65,12 @@ if ! line_exists 'include "dms/windowrules.kdl"'; then
   fi
 fi
 
-# 5. Add fcitx5 spawn-at-startup
+# 6. Add fcitx5 spawn-at-startup
 if ! line_exists 'spawn-at-startup "fcitx5" "-d"'; then
   content="${content}"$'\n'"spawn-at-startup \"fcitx5\" \"-d\""
 fi
 
-# 6. Add rclone onedrive mount spawn-at-startup
+# 7. Add rclone onedrive mount spawn-at-startup
 if ! line_exists 'spawn-at-startup "rclone"'; then
   content="${content}"$'\n'"spawn-at-startup \"rclone\" \"mount\" \"onedrive:/\" \"/home/sabertaz/onedrive\" \"--vfs-cache-mode\" \"full\" \"--daemon\""
 fi
