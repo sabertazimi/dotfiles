@@ -3,6 +3,7 @@
 
 window-rule {
     match app-id="^firefox$"
+    match app-id="^steam_app_1329410$"
     open-maximized true
 }
 
