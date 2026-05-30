@@ -44,60 +44,22 @@ if ! line_exists 'LC_CTYPE "en_US.UTF-8"'; then
     ' <<<"$content")
 fi
 
-# 4. Add fcitx5 spawn-at-startup
-if ! line_exists 'spawn-at-startup "fcitx5" "-d"'; then
-  if echo "$content" | grep -q 'spawn-at-startup'; then
-    content=$(awk '
-            /spawn-at-startup.*"fcitx5"/ { fcitx_seen = 1 }
-            /spawn-at-startup/ && !fcitx_seen && !fcitx_added {
-                print
-                print "spawn-at-startup \"fcitx5\" \"-d\""
-                fcitx_added = 1
-                next
-            }
-            { print }
-        ' <<<"$content")
-  else
-    # Add after environment block
-    content=$(awk '
-            /^[[:space:]]*environment[[:space:]]*{/ {
-                in_env = 1
-            }
-            in_env && /^[[:space:]]*}/ && !fcitx_added {
-                print
-                print "spawn-at-startup \"fcitx5\" \"-d\""
-                print ""
-                fcitx_added = 1
-                in_env = 0
-                next
-            }
-            { print }
-        ' <<<"$content")
-  fi
-fi
-
-# 5. Add rclone onedrive mount spawn-at-startup
-if ! line_exists 'spawn-at-startup "rclone"'; then
-  if echo "$content" | grep -q 'spawn-at-startup'; then
-    content=$(awk '
-            /spawn-at-startup.*"rclone"/ { rclone_seen = 1 }
-            /spawn-at-startup.*"fcitx5"/ && !rclone_seen && !rclone_added {
-                print
-                print "spawn-at-startup \"rclone\" \"mount\" \"onedrive:/\" \"/home/sabertaz/onedrive\" \"--vfs-cache-mode\" \"full\" \"--daemon\""
-                rclone_added = 1
-                next
-            }
-            { print }
-        ' <<<"$content")
-  fi
-fi
-
-# 6. Add optional `windowrules` include
+# 4. Add optional `windowrules` include
 if ! line_exists 'include "dms/windowrules.kdl"'; then
   windowrules_file="${XDG_CONFIG_HOME:-$HOME/.config}/niri/dms/windowrules.kdl"
   if [ -f "$windowrules_file" ]; then
     content="${content}"$'\n'"include \"dms/windowrules.kdl\""
   fi
+fi
+
+# 5. Add fcitx5 spawn-at-startup
+if ! line_exists 'spawn-at-startup "fcitx5" "-d"'; then
+  content="${content}"$'\n'"spawn-at-startup \"fcitx5\" \"-d\""
+fi
+
+# 6. Add rclone onedrive mount spawn-at-startup
+if ! line_exists 'spawn-at-startup "rclone"'; then
+  content="${content}"$'\n'"spawn-at-startup \"rclone\" \"mount\" \"onedrive:/\" \"/home/sabertaz/onedrive\" \"--vfs-cache-mode\" \"full\" \"--daemon\""
 fi
 
 # Output modified content
