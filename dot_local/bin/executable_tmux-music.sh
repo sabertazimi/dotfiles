@@ -132,7 +132,7 @@ main() {
     tmux wait-for -U "$lock_channel"
     trap - EXIT
     tmux select-window -t "$window_target"
-    ghostty -e tmux attach-session -t "$session_name" &
+    ghostty -e tmux attach-session -t "$session_name" & disown
     open_playlist
   else
     open_playlist
