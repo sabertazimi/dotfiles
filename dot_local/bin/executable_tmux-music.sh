@@ -126,7 +126,7 @@ main() {
     fi
   fi
 
-  setup_cava_pane
+  # setup_cava_pane
 
   if [ "$needs_ghostty" = true ]; then
     tmux wait-for -U "$lock_channel"
