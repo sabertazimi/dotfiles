@@ -52,6 +52,22 @@ init_mode() {
   lock_channel="tmux-music:${session_name}:${WINDOW_NAME}"
 }
 
+create_session() {
+  if [ "$needs_ghostty" = true ] && ! tmux has-session -t "$session_name" 2>/dev/null; then
+    fresh_session=true
+    tmux new-session -d -s "$session_name" -n "$WINDOW_NAME" -c "$current_path" 'exec musicfox'
+  fi
+}
+
+acquire_lock() {
+  tmux wait-for -L "$lock_channel"
+  trap release_lock EXIT
+}
+
+release_lock() {
+  tmux wait-for -U "$lock_channel"
+}
+
 toggle_or_exit() {
   if [ "$fresh_session" = true ]; then
     return 0
@@ -80,6 +96,16 @@ toggle_or_exit() {
   exit 0
 }
 
+create_window() {
+  if [ "$fresh_session" = false ]; then
+    if [ -n "${TMUX:-}" ]; then
+      tmux new-window -a -n "$WINDOW_NAME" -c "$current_path" -d 'exec musicfox'
+    else
+      tmux new-window -a -t "${session_name}:" -n "$WINDOW_NAME" -c "$current_path" -d 'exec musicfox'
+    fi
+  fi
+}
+
 setup_cava_pane() {
   tmux split-window -v -t "$window_target" -c "$current_path" 'exec cava'
 
@@ -100,34 +126,7 @@ open_playlist() {
   tmux send-keys -t "$musicfox_pane" c
 }
 
-main() {
-  check_environment
-  init_mode
-
-  # Create session
-  if [ "$needs_ghostty" = true ] && ! tmux has-session -t "$session_name" 2>/dev/null; then
-    fresh_session=true
-    tmux new-session -d -s "$session_name" -n "$WINDOW_NAME" -c "$current_path" 'exec musicfox'
-  fi
-
-  tmux wait-for -L "$lock_channel"
-  cleanup() {
-    tmux wait-for -U "$lock_channel"
-  }
-  trap cleanup EXIT
-
-  toggle_or_exit
-
-  if [ "$fresh_session" = false ]; then
-    if [ -n "${TMUX:-}" ]; then
-      tmux new-window -a -n "$WINDOW_NAME" -c "$current_path" -d 'exec musicfox'
-    else
-      tmux new-window -a -t "${session_name}:" -n "$WINDOW_NAME" -c "$current_path" -d 'exec musicfox'
-    fi
-  fi
-
-  # setup_cava_pane
-
+dispatch() {
   if [ "$needs_ghostty" = true ]; then
     tmux wait-for -U "$lock_channel"
     trap - EXIT
@@ -137,6 +136,17 @@ main() {
   else
     open_playlist
   fi
+}
+
+main() {
+  check_environment
+  init_mode
+  create_session
+  acquire_lock
+  toggle_or_exit
+  create_window
+  # setup_cava_pane
+  dispatch
 }
 
 main
