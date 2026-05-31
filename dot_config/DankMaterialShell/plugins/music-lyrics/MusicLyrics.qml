@@ -25,9 +25,67 @@ PluginComponent {
     Component {
         id: hPillComponent
         Row {
+            id: hPillRow
             spacing: Theme.spacingS
 
+            property real maxLyricWidth: 240
+
+            // Asynchronously calculate max lyrics width
+            // by finding the actual right section boundary.
+            // Uses a Timer to break the synchronous binding chain
+            // and avoid binding loops with CenterSection's Timer-driven repositioning.
+            function recalcMaxWidth() {
+                if (!root.parentScreen) return;
+
+                // Walk up to find the section layout,
+                // then locate the right section's actual left edge in scene coordinates.
+                let rightEdge = -1;
+                let p = hPillRow.parent;
+                while (p) {
+                    if (p.objectName === "centerSection"
+                        || p.objectName === "leftSection"
+                        || p.objectName === "rightSection") {
+                        const layout = p.parent;
+                        if (layout) {
+                            for (let i = 0; i < layout.children.length; i++) {
+                                if (layout.children[i].objectName === "rightSection") {
+                                    rightEdge = layout.children[i].mapToItem(null, 0, 0).x;
+                                    break;
+                                }
+                            }
+                        }
+                        break;
+                    }
+                    p = p.parent;
+                }
+
+                if (rightEdge <= 0)
+                    rightEdge = root.parentScreen.width - 300;
+
+                const globalX = hPillRow.mapToItem(null, 0, 0).x;
+                if (globalX <= 0) return;
+
+                const available = rightEdge - globalX;
+                const newMax = Math.max(80, available - chipRect.width - Theme.spacingS * 2);
+                if (Math.abs(newMax - maxLyricWidth) > 2)
+                    maxLyricWidth = newMax;
+            }
+
+            Timer {
+                id: lyricWidthTimer
+                interval: 0
+                onTriggered: hPillRow.recalcMaxWidth()
+            }
+
+            Connections {
+                target: lyrics
+                function onCurrentLyricTextChanged() { lyricWidthTimer.restart() }
+            }
+
+            Component.onCompleted: lyricWidthTimer.start()
+
             Rectangle {
+                id: chipRect
                 width: chipContent.implicitWidth + Theme.spacingS * 2
                 height: Theme.fontSizeSmall + Theme.spacingXS
                 radius: 12
@@ -66,7 +124,7 @@ PluginComponent {
                 wrapMode: Text.NoWrap
                 maximumLineCount: 1
                 elide: Text.ElideRight
-                width: Math.min(implicitWidth, 300)
+                width: Math.min(implicitWidth, hPillRow.maxLyricWidth)
             }
         }
     }
