@@ -33,15 +33,16 @@ if [[ -n "$GHOSTTY_RESOURCES_DIR" ]] && [[ -r "$GHOSTTY_RESOURCES_DIR/shell-inte
   builtin source "$GHOSTTY_RESOURCES_DIR/shell-integration/zsh/ghostty-integration"
 fi
 
-# Ghostty shader
-GHOSTTY_SHADER_HOME="${XDG_CONFIG_HOME:-${HOME}/.config}/ghostty/shaders"
-[ ! -d "$GHOSTTY_SHADER_HOME" ] && mkdir -p "$(dirname "$GHOSTTY_SHADER_HOME")"
-[ ! -d "$GHOSTTY_SHADER_HOME/.git" ] && git clone --depth=1 https://github.com/sahaj-b/ghostty-cursor-shaders "$GHOSTTY_SHADER_HOME"
-
-# Tmux catppuccin theme
-TMUX_CATPPUCCIN_HOME="${XDG_CONFIG_HOME:-${HOME}/.config}/tmux/plugins/catppuccin/tmux"
-[ ! -d "$TMUX_CATPPUCCIN_HOME" ] && mkdir -p "$(dirname "$TMUX_CATPPUCCIN_HOME")"
-[ ! -d "$TMUX_CATPPUCCIN_HOME/.git" ] && git clone --depth=1 https://github.com/catppuccin/tmux "$TMUX_CATPPUCCIN_HOME"
+# Plugins from GitHub
+github_plugins=(
+  "${XDG_CONFIG_HOME:-$HOME/.config}/ghostty/shaders https://github.com/sahaj-b/ghostty-cursor-shaders"
+  "${XDG_CONFIG_HOME:-$HOME/.config}/tmux/plugins/catppuccin/tmux https://github.com/catppuccin/tmux"
+)
+for entry in "${github_plugins[@]}"; do
+  local dest="${entry%% *}" url="${entry#* }"
+  [ ! -d "$dest" ] && mkdir -p "$(dirname "$dest")"
+  [ ! -d "$dest/.git" ] && echo "Installing $(basename "$(dirname "$dest")")/$(basename "$dest")..." && git clone --depth=1 --quiet "$url" "$dest"
+done
 
 # Rclone directory
 [ ! -d "$HOME/onedrive" ] && mkdir -p "$HOME/onedrive"
@@ -49,7 +50,7 @@ TMUX_CATPPUCCIN_HOME="${XDG_CONFIG_HOME:-${HOME}/.config}/tmux/plugins/catppucci
 # Zinit
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit"
 [ ! -d "$ZINIT_HOME" ] && mkdir -p "$(dirname $ZINIT_HOME)"
-[ ! -d "$ZINIT_HOME/.git" ] && git clone --depth=1 https://github.com/zdharma-continuum/zinit "$ZINIT_HOME"
+[ ! -d "$ZINIT_HOME/.git" ] && echo "Installing zinit..." && git clone --depth=1 --quiet https://github.com/zdharma-continuum/zinit "$ZINIT_HOME"
 source "${ZINIT_HOME}/zinit.zsh"
 
 # Plugins
@@ -73,7 +74,12 @@ zinit wait lucid light-mode for \
 omz() {
   echo "==> Updating Zinit and plugins..."
   zinit self-update && zinit update --all --parallel
-  echo "\n✓ All Zinit plugins updated!"
+  for entry in "${github_plugins[@]}"; do
+    local dest="${entry%% *}"
+    echo "==> Updating $(basename "$(dirname "$dest")")/$(basename "$dest")..."
+    git -C "$dest" pull --quiet
+  done
+  echo "\n✓ All plugins updated!"
 }
 
 # Tool initialization
