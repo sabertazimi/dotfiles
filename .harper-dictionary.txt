@@ -1,6 +1,7 @@
 LazyVim
 MPV
 autocmds
+chezmoi
 fcitx
 ghostty
 matugen

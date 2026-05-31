@@ -15,10 +15,15 @@ wallpapers/       # Wallpaper management scripts
 
 ## Chezmoi Conventions
 
-- `dot_*` files are installed to `~/.*` (e.g., `dot_zshrc` → `~/.zshrc`)
-- `private_dot_*` files are private (e.g., `dot_local/share/private_fcitx5/` -> `~/.local/share/fcitx5/`)
 - Files under `dot_config/` install to `~/.config/`
 - Files under `dot_local/` install to `~/.local/`
+- `dot_*` files are installed to `~/.*`: e.g., `dot_zshrc` → `~/.zshrc`
+- `executable_*` files are deployed with `+x` permission:
+  e.g., `dot_local/bin/executable_tmux-entry.sh` → `~/.local/bin/tmux-entry.sh`
+- `modify_*` files are `stdin`→`stdout` bash scripts that patch the target file in-place:
+  placed alongside the target in the same directory
+- `private_*` files are private: e.g., `dot_local/share/private_fcitx5/` -> `~/.local/share/fcitx5/`
+- `*.tmpl` files are chezmoi templates: e.g., `.chezmoi.toml.tmpl`
 
 ## Commit
 
