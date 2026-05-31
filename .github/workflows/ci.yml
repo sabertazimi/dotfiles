@@ -38,11 +38,13 @@ jobs:
           pacman -Syu --noconfirm --needed chezmoi jq
       - name: Setup fixtures
         run: |
+          mkdir -p ~/.config/autostart
           mkdir -p ~/.config/cava
           mkdir -p ~/.config/niri
           mkdir -p ~/.config/television
           mkdir -p ~/.config/DankMaterialShell
           mkdir -p ~/.local/state/DankMaterialShell
+          cp .github/fixtures/steam-autostart.desktop ~/.config/autostart/steam.desktop
           cp .github/fixtures/cava-config.ini ~/.config/cava/config
           cp .github/fixtures/niri-config.kdl ~/.config/niri/config.kdl
           cp .github/fixtures/television-config.toml ~/.config/television/config.toml
