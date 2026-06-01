@@ -116,7 +116,7 @@ if [ -n "$CHEZMOI_LOG" ] && [ -f "$CHEZMOI_LOG" ]; then
         print ENVIRON["HOME"] "/" m[1]
       }
     ' "$CHEZMOI_LOG" | while IFS= read -r path; do
-      [ -f "$path" ] && printf '%s\n' "$path"
+      { [ -f "$path" ] || [ -L "$path" ]; } && printf '%s\n' "$path"
     done | sort -u
   )
 
