@@ -20,3 +20,7 @@ pnpm-lock.yaml
 .config/mpv/script-opts/modernz.conf
 .config/starship.toml
 .config/tmux/theme.conf
+.local/share/fcitx5/themes/matugen-dark/highlight.svg
+.local/share/fcitx5/themes/matugen-dark/theme.conf
+.local/share/fcitx5/themes/matugen-light/highlight.svg
+.local/share/fcitx5/themes/matugen-light/theme.conf

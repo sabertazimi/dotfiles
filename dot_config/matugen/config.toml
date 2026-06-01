@@ -17,3 +17,20 @@ output_path = '~/.config/starship.toml'
 input_path = '~/.config/matugen/templates/tmux.conf'
 output_path = '~/.config/tmux/theme.conf'
 post_hook = 'tmux source-file ~/.config/tmux/theme.conf'
+
+[templates.fcitx5_theme_dark]
+input_path = '~/.config/matugen/templates/fcitx5-dark.conf'
+output_path = '~/.local/share/fcitx5/themes/matugen-dark/theme.conf'
+
+[templates.fcitx5_highlight_dark]
+input_path = '~/.config/matugen/templates/fcitx5-highlight.svg'
+output_path = '~/.local/share/fcitx5/themes/matugen-dark/highlight.svg'
+
+[templates.fcitx5_theme_light]
+input_path = '~/.config/matugen/templates/fcitx5-light.conf'
+output_path = '~/.local/share/fcitx5/themes/matugen-light/theme.conf'
+
+[templates.fcitx5_highlight_light]
+input_path = '~/.config/matugen/templates/fcitx5-highlight.svg'
+output_path = '~/.local/share/fcitx5/themes/matugen-light/highlight.svg'
+post_hook = 'fcitx5 -r -d'
