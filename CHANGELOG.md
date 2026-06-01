@@ -2,6 +2,48 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.9.0](https://github.com/sabertazimi/dotfiles/compare/v1.8.0...v1.9.0) (2026-06-01)
+
+
+### Features
+
+* **dms:** enable wallpaper blur on overview ([54d1c4b](https://github.com/sabertazimi/dotfiles/commit/54d1c4b804a023804f0ebc56b058d77c3727778b))
+* **dms:** extract shared `LyricsService` and add desktop lyrics plugin ([#15](https://github.com/sabertazimi/dotfiles/issues/15)) ([64be733](https://github.com/sabertazimi/dotfiles/commit/64be73317609f67b9945de45ebcb894a992cdcf8))
+* **fcitx5:** add matugen-integrated dynamic input method themes ([00c3782](https://github.com/sabertazimi/dotfiles/commit/00c3782dd889ed990d66b7178d97b65c027c9883))
+* **fcitx5:** add profile and rime-ice grammar model configuration ([c9aa2f0](https://github.com/sabertazimi/dotfiles/commit/c9aa2f03dde2f6323ed55e411ceed3960d5bd90a))
+* **fcitx5:** add symlink for rime ice lunar.db ([427d98c](https://github.com/sabertazimi/dotfiles/commit/427d98c5bb621fde1e4e19ab79da9bc7fe4fcbc1))
+* **fcitx5:** switch theme to `Ori` Light/Dark ([21e67df](https://github.com/sabertazimi/dotfiles/commit/21e67df2cca371c8bbda32acff6f7af14956f962))
+* **fzf:** delegate preview to system's built-in `fzf-preview.sh` ([cb2ca3d](https://github.com/sabertazimi/dotfiles/commit/cb2ca3d0faa73a613df4e1c68d4f39ec5e58862a))
+* **niri:** bind `Mod+P` to sync X11 clipboard to Wayland ([6ea4fcd](https://github.com/sabertazimi/dotfiles/commit/6ea4fcd07bcb005f7192aa23ea15a0eed7245957))
+* **niri:** bind Mod+M to tmux-music with multi-mode support ([d7d38bb](https://github.com/sabertazimi/dotfiles/commit/d7d38bbdb70bffde8d554ce485161b9245219729))
+* **niri:** setup `always-center-single-column` layout ([5947cef](https://github.com/sabertazimi/dotfiles/commit/5947cef8ece333ceebec43b3aa7099f64e2081fa))
+* **steam:** add Steam silent launch modifier ([ae92278](https://github.com/sabertazimi/dotfiles/commit/ae9227877d92e9373479785a266a3f83fd47f926))
+* **tmux:** add `last-window` key binding to `b` ([050d688](https://github.com/sabertazimi/dotfiles/commit/050d6882ec639acb31fbd676159f54dc2b806dac))
+* **zsh:** add `--git` flag to ll and la aliases ([245512d](https://github.com/sabertazimi/dotfiles/commit/245512d83180b8dc4b4bb18a3c54f9d27f3e2aa1))
+* **zsh:** add `grw` alias for `gh run watch` ([ee925c0](https://github.com/sabertazimi/dotfiles/commit/ee925c0f52e9cf2922cb07615c2098ad3e02708a))
+* **zsh:** add `PNPM_HOME` to PATH ([a8577a6](https://github.com/sabertazimi/dotfiles/commit/a8577a688a17f4503e38aa3d75e3fb8f659977f5))
+* **zsh:** add tree alias for `eza` ([1a8ccdb](https://github.com/sabertazimi/dotfiles/commit/1a8ccdb15cd36fb6ec73a5492f89d5ee9ce1d4ea))
+* **zsh:** add unified update mechanism for manually cloned GitHub plugins ([48c43d9](https://github.com/sabertazimi/dotfiles/commit/48c43d90d04342a96f60f6a1c4e120dc2af1942e))
+* **zsh:** configure `fzf` `CTRL-T` and `CTRL-R` with preview and copy bindings ([e92f497](https://github.com/sabertazimi/dotfiles/commit/e92f49776c5f68d521054886f9e23967d33c0625))
+* **zsh:** configure `fzf` key bindings for preview scrolling and copy-to-clipboard ([5bc983c](https://github.com/sabertazimi/dotfiles/commit/5bc983cd1f9401eb31ced33daa7fff3050234328))
+* **zsh:** extend fzf-tab preview to more file commands ([79f832e](https://github.com/sabertazimi/dotfiles/commit/79f832e6f21aa9ef7f285a87dd00b66f83464d79))
+* **zsh:** extract unified `fzf` preview into reusable script ([995cf63](https://github.com/sabertazimi/dotfiles/commit/995cf636491160f9ee8ac6c9b94baf48c2f44970))
+* **zsh:** toggle `fzf` preview window visibility with `ctrl-/` ([e45726d](https://github.com/sabertazimi/dotfiles/commit/e45726d81c0f2aa23a345365a976a259a4e57ef1))
+* **zsh:** use `bat` as man page pager ([1fe2b53](https://github.com/sabertazimi/dotfiles/commit/1fe2b5300600f5423b182441cacabb432aacce1a))
+
+
+### Bug Fixes
+
+* **dms:** stop syncing pinned dock apps ([4ed3bb3](https://github.com/sabertazimi/dotfiles/commit/4ed3bb3c29aebffce312604b5705fcae150f5434))
+* **music-lyrics:** add explicit `wrapMode` to bar pill lyric text ([1c36fbb](https://github.com/sabertazimi/dotfiles/commit/1c36fbbc02ddcef7635c0afe5c7f69258d10f0be))
+* **music-lyrics:** dynamically calculate max lyric width from right section boundary ([dab820d](https://github.com/sabertazimi/dotfiles/commit/dab820d65b12190d0e83c6e9990ae1f95e4fb9d7))
+* **niri:** simplify `spawn-at-startup` insertion logic ([70da15d](https://github.com/sabertazimi/dotfiles/commit/70da15d1968193d2d7627f63dc88bffa33853e6d))
+* **steam:** use section-scoped Exec matching in modify script ([4b10125](https://github.com/sabertazimi/dotfiles/commit/4b101259a1d743fa0897c43f26bf6ba34f9e908e))
+* **tmux-music:** disable cava pane setup ([16a4d90](https://github.com/sabertazimi/dotfiles/commit/16a4d90c5dc2fdfda57d10d248ace624016b1abf))
+* **tmux-music:** disown background ghostty process ([86bcd6b](https://github.com/sabertazimi/dotfiles/commit/86bcd6ba82151717092e01ffe99704ab0c909c34))
+* **zsh:** add `/bin` suffix to `PNPM_HOME` in PATH ([c8876ee](https://github.com/sabertazimi/dotfiles/commit/c8876ee0362e2866e6e0dbc86c860e87cb3133c2))
+* **zsh:** remove redundant `y()` `yazi` cwd wrapper ([e36185b](https://github.com/sabertazimi/dotfiles/commit/e36185ba3b32dae88a01745122f8d71b4bf0d0fa))
+
 ## [1.8.0](https://github.com/sabertazimi/dotfiles/compare/v1.7.0...v1.8.0) (2026-05-20)
 
 
