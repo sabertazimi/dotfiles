@@ -3,4 +3,4 @@
 # Idempotent steam.desktop modifier
 # Usage: cat ~/.config/autostart/steam.desktop | ./modify_steam.desktop > ~/.config/autostart/steam.desktop.new
 
-sed 's|^Exec=/usr/bin/steam %U$|Exec=/usr/bin/steam -silent %U|'
+sed '/^\[Desktop Entry\]/,/^\[/{ s|^Exec=.*|Exec=/usr/bin/steam -silent %U| }'
