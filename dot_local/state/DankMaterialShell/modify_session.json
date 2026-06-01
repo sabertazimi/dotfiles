@@ -7,15 +7,6 @@ jq -j --arg user "$USER" '
   .wallpaperCyclingInterval = 1800 |
   .wallpaperCyclingTime = "18:00" |
   .wallpaperTransition = "disc" |
-  .pinnedApps = [
-  "firefox",
-  "com.mitchellh.ghostty",
-  "nvim",
-  "qq",
-  "com.qq.weixin",
-  "wps-office-prometheus",
-  "steam"
-] |
   .hiddenApps = [
   "Clash Verge",
   "wps-office-wps",
