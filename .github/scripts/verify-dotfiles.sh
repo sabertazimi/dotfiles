@@ -97,7 +97,7 @@ echo "  Status clean"
 
 echo "Checking managed files..."
 for file in "${FILES[@]}"; do
-  if [ ! -e "$file" ]; then
+  if [ ! -e "$file" ] && [ ! -L "$file" ]; then
     echo "Error: $file not found"
     exit 1
   fi
