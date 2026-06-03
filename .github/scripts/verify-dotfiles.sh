@@ -37,6 +37,7 @@ FILES=(
   "$HOME/.config/matugen/templates/tmux.conf"
   "$HOME/.config/mimeapps.list"
   "$HOME/.config/mpd/mpd.conf"
+  "$HOME/.config/mpv/input.conf"
   "$HOME/.config/mpv/mpv.conf"
   "$HOME/.config/mpv/script-opts/thumbfast.conf"
   "$HOME/.config/mpv/scripts/danmaku/danmu2ass.py"
