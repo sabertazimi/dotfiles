@@ -39,6 +39,8 @@ FILES=(
   "$HOME/.config/mpd/mpd.conf"
   "$HOME/.config/mpv/mpv.conf"
   "$HOME/.config/mpv/script-opts/thumbfast.conf"
+  "$HOME/.config/mpv/scripts/danmaku/danmu2ass.py"
+  "$HOME/.config/mpv/scripts/danmaku/main.lua"
   "$HOME/.config/niri/config.kdl"
   "$HOME/.config/niri/dms/binds.kdl"
   "$HOME/.config/niri/dms/windowrules.kdl"
