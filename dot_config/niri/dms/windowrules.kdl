@@ -2,22 +2,18 @@
 // Do not edit manually - changes may be overwritten
 
 window-rule {
-    match app-id="^firefox$"
-    match app-id="^steam_app_1329410$"
-    open-maximized true
-}
-
-window-rule {
-    match app-id="^org.quickshell$"
-    match app-id="^org.gnome.Nautilus$"
     opacity 0.85
-}
-
-window-rule {
-    match app-id="^org.quickshell$"
-    match app-id="^org.gnome.Nautilus$"
-    match app-id="com.mitchellh.ghostty"
     background-effect {
         blur true
     }
+}
+
+window-rule {
+    match app-id="^firefox$"
+    match app-id="^imv$"
+    match app-id="^mpv$"
+    match app-id="^steam_app_[0-9]+$"
+
+    opacity 1.0
+    open-maximized true
 }
