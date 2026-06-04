@@ -33,8 +33,8 @@ local o = {
 
 options.read_options(o)
 
-local danmu_file = nil
-local danmu_open = false
+local danmaku_file = nil
+local danmaku_open = false
 local sec_sub_visibility = mp.get_property_native("secondary-sub-visibility")
 local sec_sub_ass_override = mp.get_property_native("secondary-sub-ass-override")
 
@@ -80,7 +80,7 @@ local function log(msg, secs)
 end
 
 local function add_fps_vf()
-	if not danmu_open or not o.fps_vf then
+	if not danmaku_open or not o.fps_vf then
 		return
 	end
 
@@ -96,19 +96,19 @@ end
 
 local function danmaku_show()
 	log("显示弹幕")
-	danmu_open = true
+	danmaku_open = true
 	mp.set_property_native("secondary-sub-visibility", true)
 	add_fps_vf()
 end
 
 local function danmaku_unshow()
 	log("隐藏弹幕")
-	danmu_open = false
+	danmaku_open = false
 	mp.set_property_native("secondary-sub-visibility", false)
 	mp.commandv("vf", "remove", "@Danmaku-FPS")
 end
 
-local function load_danmu(file)
+local function load_danmaku(file)
 	if not file_exists(file) then
 		return
 	end
@@ -131,7 +131,7 @@ local function danmaku_process(cid)
 
 	local danmaku_dir = os.getenv("TEMP") or "/tmp/"
 	local directory = mp.get_script_directory()
-	local py_path = utils.join_path(directory, "danmu2ass.py")
+	local py_path = utils.join_path(directory, "danmaku2ass.py")
 
 	local dw = 1920
 	local dh = 1080
@@ -173,8 +173,8 @@ local function danmaku_process(cid)
 		args = arg,
 	}, function(res, val, err)
 		if err == nil then
-			danmu_file = utils.join_path(danmaku_dir, "bilibili.ass")
-			load_danmu(danmu_file)
+			danmaku_file = utils.join_path(danmaku_dir, "bilibili.ass")
+			load_danmaku(danmaku_file)
 		else
 			log("处理错误: " .. err)
 		end
@@ -208,11 +208,11 @@ local function danmaku_check()
 end
 
 local function danmaku_toggle()
-	if not danmu_file then
+	if not danmaku_file then
 		return
 	end
 
-	if danmu_open then
+	if danmaku_open then
 		danmaku_unshow()
 	elseif mp.get_property_native("secondary-sid") then
 		danmaku_show()
@@ -220,15 +220,15 @@ local function danmaku_toggle()
 end
 
 local function danmaku_terminate()
-	if not danmu_file then
+	if not danmaku_file then
 		return
 	end
 	log("文件结束")
-	if file_exists(danmu_file) then
-		os.remove(danmu_file)
+	if file_exists(danmaku_file) then
+		os.remove(danmaku_file)
 	end
-	danmu_file = nil
-	danmu_open = false
+	danmaku_file = nil
+	danmaku_open = false
 	mp.set_property_native("secondary-sub-visibility", sec_sub_visibility)
 	mp.set_property_native("secondary-sub-ass-override", sec_sub_ass_override)
 	mp.commandv("vf", "remove", "@Danmaku-FPS")

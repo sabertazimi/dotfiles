@@ -40,7 +40,7 @@ FILES=(
   "$HOME/.config/mpv/input.conf"
   "$HOME/.config/mpv/mpv.conf"
   "$HOME/.config/mpv/script-opts/thumbfast.conf"
-  "$HOME/.config/mpv/scripts/danmaku/danmu2ass.py"
+  "$HOME/.config/mpv/scripts/danmaku/danmaku2ass.py"
   "$HOME/.config/mpv/scripts/danmaku/main.lua"
   "$HOME/.config/niri/config.kdl"
   "$HOME/.config/niri/dms/binds.kdl"
