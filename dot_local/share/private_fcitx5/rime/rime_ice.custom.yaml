@@ -10,6 +10,7 @@ patch:
     - { when: composing, accept: Control+d, send: Delete }
     - { when: composing, accept: Control+k, send: Shift+Delete }
     - { when: composing, accept: Control+h, send: BackSpace }
+    - { when: composing, accept: Control+w, send: Shift+BackSpace }
     - { when: composing, accept: Control+c, send: Escape }
     - { when: composing, accept: Control+g, send: Escape }
     - { when: composing, accept: Control+bracketleft, send: Escape }
