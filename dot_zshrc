@@ -62,7 +62,6 @@ zinit snippet OMZL::key-bindings.zsh
 zinit snippet OMZL::theme-and-appearance.zsh
 zinit snippet OMZP::git
 zinit snippet OMZP::python
-zinit snippet OMZP::vi-mode
 zinit snippet OMZP::last-working-dir
 zinit wait lucid light-mode for \
   blockf atpull'zinit creinstall -q .' zsh-users/zsh-completions \
