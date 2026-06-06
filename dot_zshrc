@@ -70,7 +70,7 @@ zinit wait lucid light-mode for \
   atload"_zsh_autosuggest_start" zsh-users/zsh-autosuggestions \
   atinit"_tool_init" zsh-users/zsh-syntax-highlighting
 
-omz() {
+dotu() {
   echo "==> Updating Zinit and plugins..."
   zinit self-update && zinit update --all --parallel
   for entry in "${github_plugins[@]}"; do
