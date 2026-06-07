@@ -151,6 +151,7 @@ alias diff="delta"
 alias vi="nvim"
 alias vim="nvim"
 alias dvim="chezmoi edit"
+alias gvim='vim $(gdun)'
 alias svim="sudoedit"
 alias open="xdg-open"
 alias dot="chezmoi"
@@ -169,6 +170,10 @@ alias ccu="pnpx skills update -y"
 # Git workflow
 alias lg="lazygit"
 alias gan="git add -N"
+alias gdn="git diff --name-only"
+alias gdcn="git diff --cached --name-only"
+alias gdsn="git diff --staged --name-only"
+alias gdun="git diff @{upstream} --name-only"
 alias gpot="git push origin --follow-tags"
 alias gtd="git tag --delete"
 
