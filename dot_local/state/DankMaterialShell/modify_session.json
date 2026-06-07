@@ -8,7 +8,6 @@ jq -j --arg user "$USER" '
   .wallpaperCyclingTime = "18:00" |
   .wallpaperTransition = "disc" |
   .hiddenApps = [
-  "Clash Verge",
   "wps-office-wps",
   "wps-office-et",
   "wps-office-wpp",

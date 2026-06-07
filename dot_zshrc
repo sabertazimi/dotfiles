@@ -122,72 +122,72 @@ bindkey "^G" edit-command-line
 bindkey "^X^E" edit-command-line
 
 # Package helpers
-alias yay="paru"
-alias pac="tv aur"
-alias pacl="tv pacman-packages"
-alias pacu="paru -Quq | fzf --multi --preview 'paru -Qi {1}' --preview-window=down:75% --layout=reverse | xargs -ro paru -Su --needed"
-alias paco="pacman-owns.sh"
+alias yay='paru'
+alias pac='tv aur'
+alias pacl='tv pacman-packages'
+alias pacu='paru -Quq | fzf --multi --preview '\''paru -Qi {1}'\'' --preview-window=down:75% --layout=reverse | xargs -ro paru -Su --needed'
+alias paco='pacman-owns.sh'
 
 # CLI aliases
-alias cl="clear"
-alias help="tldr"
-alias cat="bat"
-alias ls="eza --icons --group-directories-first"
-alias l="ls"
-alias ll="ls -lh --git"
-alias la="ls -alh --git"
-alias tree="ls --tree"
-alias find="fd --hidden --follow --exclude .git"
-alias grep="rg"
-alias ps="procs"
-alias df="duf"
-alias du="dust"
-alias top="btm"
-alias ff="fastfetch --config examples/7.jsonc"
-alias ping="gping"
-alias curl="curlie"
-alias dig="doggo"
-alias diff="delta"
-alias vi="nvim"
-alias vim="nvim"
-alias dvim="chezmoi edit"
+alias cl='clear'
+alias help='tldr'
+alias cat='bat'
+alias ls='eza --icons --group-directories-first'
+alias l='ls'
+alias ll='ls -lh --git'
+alias la='ls -alh --git'
+alias tree='ls --tree'
+alias find='fd --hidden --follow --exclude .git'
+alias grep='rg'
+alias ps='procs'
+alias df='duf'
+alias du='dust'
+alias top='btm'
+alias ff='fastfetch --config examples/7.jsonc'
+alias ping='gping'
+alias curl='curlie'
+alias dig='doggo'
+alias diff='delta'
+alias vi='nvim'
+alias vim='nvim'
+alias dvim='chezmoi edit'
 alias gvim='vim $(gdun)'
-alias svim="sudoedit"
-alias open="xdg-open"
-alias dot="chezmoi"
-alias omz="dotu"
-alias -g NE="2> /dev/null"
-alias -g NO=">/dev/null"
-alias -g NUL="> /dev/null 2>&1"
+alias svim='sudoedit'
+alias open='xdg-open'
+alias dot='chezmoi'
+alias omz='dotu'
+alias -g NE='2> /dev/null'
+alias -g NO='>/dev/null'
+alias -g NUL='> /dev/null 2>&1'
 
 # Coding agents
-alias cc="claude"
-alias ccc="claude -c"
-alias ccr="claude -r"
-alias ccm="claude -p commit"
-alias ccu="pnpx skills update -y"
+alias cc='claude'
+alias ccc='claude -c'
+alias ccr='claude -r'
+alias ccm='claude -p commit'
+alias ccu='pnpx skills update -y'
 
 # Git workflow
-alias lg="lazygit"
-alias gan="git add -N"
-alias gdn="git diff --name-only"
-alias gdcn="git diff --cached --name-only"
-alias gdsn="git diff --staged --name-only"
-alias gdun="git diff @{upstream} --name-only"
-alias gpot="git push origin --follow-tags"
-alias gtd="git tag --delete"
+alias lg='lazygit'
+alias gan='git add -N'
+alias gdn='git diff --name-only'
+alias gdcn='git diff --cached --name-only'
+alias gdsn='git diff --staged --name-only'
+alias gdun='git diff @{upstream} --name-only'
+alias gpot='git push origin --follow-tags'
+alias gtd='git tag --delete'
 
 # GitHub workflow
-alias gpn="gh pr new"
-alias gpc="gh pr checks --watch"
-alias gpm="gh pr merge --squash --delete-branch"
-alias grd="gh run delete"
-alias grl="gh run list"
-alias grw="gh run watch"
+alias gpn='gh pr new'
+alias gpc='gh pr checks --watch'
+alias gpm='gh pr merge --squash --delete-branch'
+alias grd='gh run delete'
+alias grl='gh run list'
+alias grw='gh run watch'
 
 # Misc
-alias onedrive="rclone mount onedrive:/ ~/onedrive --vfs-cache-mode full --daemon"
-alias ncm="tmux-music.sh"
+alias onedrive='rclone mount onedrive:/ ~/onedrive --vfs-cache-mode full --daemon'
+alias ncm='tmux-music.sh'
 
 [ ! -f "$HOME/.zshrc.local" ] && touch ~/.zshrc.local
 source ~/.zshrc.local
