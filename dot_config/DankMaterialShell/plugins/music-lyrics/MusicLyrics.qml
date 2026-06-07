@@ -116,15 +116,99 @@ PluginComponent {
                 }
             }
 
-            StyledText {
-                text: lyrics.currentLyricText
-                font.pixelSize: Theme.fontSizeSmall
-                color: Theme.surfaceText
+            Item {
+                id: lyricBox
+                width: Math.min(txtCurrent.implicitWidth, hPillRow.maxLyricWidth)
+                height: txtCurrent.implicitHeight
                 anchors.verticalCenter: parent.verticalCenter
-                wrapMode: Text.NoWrap
-                maximumLineCount: 1
-                elide: Text.ElideRight
-                width: Math.min(implicitWidth, hPillRow.maxLyricWidth)
+                clip: true
+
+                property string _currentText: lyrics.currentLyricText
+                property string _outgoingText: ""
+                property bool _initialized: false
+
+                Connections {
+                    target: lyrics
+                    function onCurrentLyricTextChanged() {
+                        if (!lyricBox._initialized) {
+                            lyricBox._currentText = lyrics.currentLyricText;
+                            lyricBox._initialized = true;
+                            return;
+                        }
+                        if (lyricBox._currentText === lyrics.currentLyricText) return;
+
+                        slideAnim.stop();
+                        lyricBox._outgoingText = lyricBox._currentText;
+                        lyricBox._currentText = lyrics.currentLyricText;
+                        slideAnim.start();
+                    }
+                }
+
+                SequentialAnimation {
+                    id: slideAnim
+
+                    // Instantly position elements at animation start
+                    PropertyAction { target: txtOutgoing; property: "y"; value: 0 }
+                    PropertyAction { target: txtOutgoing; property: "opacity"; value: 1 }
+                    PropertyAction { target: txtCurrent; property: "y"; value: txtCurrent.height * 1.2 }
+                    PropertyAction { target: txtCurrent; property: "opacity"; value: 0 }
+
+                    // Animate outgoing text up & out, incoming text up & in
+                    ParallelAnimation {
+                        NumberAnimation {
+                            target: txtOutgoing
+                            property: "y"
+                            to: -txtOutgoing.height * 0.8
+                            duration: 220
+                            easing.type: Easing.OutCubic
+                        }
+                        NumberAnimation {
+                            target: txtOutgoing
+                            property: "opacity"
+                            to: 0
+                            duration: 180
+                            easing.type: Easing.OutCubic
+                        }
+                        NumberAnimation {
+                            target: txtCurrent
+                            property: "y"
+                            to: 0
+                            duration: 220
+                            easing.type: Easing.OutCubic
+                        }
+                        NumberAnimation {
+                            target: txtCurrent
+                            property: "opacity"
+                            to: 1
+                            duration: 180
+                            easing.type: Easing.OutCubic
+                        }
+                    }
+                }
+
+                StyledText {
+                    id: txtOutgoing
+                    text: lyricBox._outgoingText
+                    font.pixelSize: Theme.fontSizeSmall
+                    color: Theme.surfaceText
+                    wrapMode: Text.NoWrap
+                    maximumLineCount: 1
+                    elide: Text.ElideRight
+                    width: Math.min(implicitWidth, hPillRow.maxLyricWidth)
+                    opacity: 0
+                }
+
+                StyledText {
+                    id: txtCurrent
+                    text: lyricBox._currentText
+                    font.pixelSize: Theme.fontSizeSmall
+                    color: Theme.surfaceText
+                    wrapMode: Text.NoWrap
+                    maximumLineCount: 1
+                    elide: Text.ElideRight
+                    width: Math.min(implicitWidth, hPillRow.maxLyricWidth)
+                    opacity: 1
+                }
             }
         }
     }
