@@ -4,19 +4,19 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     // === Application Launchers ===
+    Mod+A hotkey-overlay-title="Clipboard Manager" { spawn "dms" "ipc" "call" "clipboard" "toggle"; }
     Mod+B hotkey-overlay-title="Web Browser" { spawn "firefox"; }
     Mod+D hotkey-overlay-title="Application Launcher" { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
     Mod+E hotkey-overlay-title="File Explorer" { spawn "ghostty" "-e" "yazi"; }
+    Mod+G hotkey-overlay-title="Task Manager" { spawn "dms" "ipc" "call" "processlist" "focusOrToggle"; }
     Mod+M hotkey-overlay-title="Music Player" { spawn "~/.local/bin/tmux-music.sh"; }
     Mod+N hotkey-overlay-title="Notification Center" { spawn "dms" "ipc" "call" "notifications" "toggle"; }
-    Mod+P hotkey-overlay-title="Sync X11 Clipboard" { spawn "sh" "-c" "xclip -o -selection clipboard | sed 's/\\x00.*//' | wl-copy && dms ipc call toast infoWith '复制到剪切板' '' '' 'xclip'"; }
+    Mod+O hotkey-overlay-title="Settings" { spawn "dms" "ipc" "call" "settings" "focusOrToggle"; }
+    Mod+P hotkey-overlay-title="Notepad" { spawn "dms" "ipc" "call" "notepad" "toggle"; }
     Mod+T hotkey-overlay-title="Open Terminal" { spawn "ghostty"; }
     Mod+X hotkey-overlay-title="Power Menu: Toggle" { spawn "dms" "ipc" "call" "powermenu" "toggle"; }
     Mod+Y hotkey-overlay-title="Browse Wallpapers" { spawn "dms" "ipc" "call" "dankdash" "wallpaper"; }
-    Mod+Shift+C hotkey-overlay-title="Clipboard Manager" { spawn "dms" "ipc" "call" "clipboard" "toggle"; }
-    Mod+Shift+N hotkey-overlay-title="Notepad" { spawn "dms" "ipc" "call" "notepad" "toggle"; }
-    Mod+Shift+S hotkey-overlay-title="Settings" { spawn "dms" "ipc" "call" "settings" "focusOrToggle"; }
-    Mod+Shift+T hotkey-overlay-title="Task Manager" { spawn "dms" "ipc" "call" "processlist" "focusOrToggle"; }
+    Mod+Z hotkey-overlay-title="Sync X11 Clipboard" { spawn "sh" "-c" "xclip -o -selection clipboard | sed 's/\\x00.*//' | wl-copy && dms ipc call toast infoWith '复制到剪切板' '' '' 'xclip'"; }
 
     // === Security ===
     Mod+Alt+L hotkey-overlay-title="Lock Screen" {
@@ -201,7 +201,7 @@ binds {
     // === Screenshots ===
     Mod+S hotkey-overlay-title="Screenshot" { screenshot; }
     Mod+Ctrl+S { screenshot-window; }
-    Mod+Ctrl+Shift+S { screenshot-screen; }
+    Mod+Shift+S { screenshot-screen; }
     XF86Launch1 { screenshot; }
     Ctrl+XF86Launch1 { screenshot-window; }
     Ctrl+Shift+XF86Launch1 { screenshot-screen; }
