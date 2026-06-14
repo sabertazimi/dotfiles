@@ -2,6 +2,44 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.10.0](https://github.com/sabertazimi/dotfiles/compare/v1.9.0...v1.10.0) (2026-06-14)
+
+
+### Features
+
+* **dms:** set `XMODIFIERS` for fcitx input method ([ab65fbb](https://github.com/sabertazimi/dotfiles/commit/ab65fbb620b740be18306e199b88b577ed863875))
+* **fcitx:** add `Alt+v` key binding for `Page_Up` ([34ece97](https://github.com/sabertazimi/dotfiles/commit/34ece974b981d9d5bfa527538ac30d2ec370312d))
+* **fcitx:** add `C-w` key binding to delete a word ([13f7fb4](https://github.com/sabertazimi/dotfiles/commit/13f7fb4f16ec59373902b52155cea2870b81e6bf))
+* **fcitx:** add Emacs editing key bindings for rime ice ([a08ed95](https://github.com/sabertazimi/dotfiles/commit/a08ed95200646ff016ed190655c18b3289cead66))
+* **mpv:** add `Bilibili` danmaku plugin ([c08e883](https://github.com/sabertazimi/dotfiles/commit/c08e88311e4a031c0efff1e1ed879698733b6519))
+* **mpv:** add vim-style seek key bindings ([80fe5d2](https://github.com/sabertazimi/dotfiles/commit/80fe5d2feab694ad6e8de19eb6bf30eca6f8a7bb))
+* **mpv:** use Firefox cookies for `yt-dlp` streams ([37c3f45](https://github.com/sabertazimi/dotfiles/commit/37c3f45e279271b68401721cce69bea24a851c06))
+* **music-lyrics:** add slide transition animation to lyrics display ([cbaa299](https://github.com/sabertazimi/dotfiles/commit/cbaa299d2c96c3ef31f899caa9f153f7929d841f))
+* **niri:** consolidate transparent window rules and expand app coverage ([e074e72](https://github.com/sabertazimi/dotfiles/commit/e074e729f140134320a885d6b257506e9a548511))
+* **niri:** rebind application launchers to mnemonic `Mod+single-key` ([b79973c](https://github.com/sabertazimi/dotfiles/commit/b79973cd559f33de9ba74c9b36f649fed6d52c3f))
+* **nvim:** add vim-surround plugin ([ab00030](https://github.com/sabertazimi/dotfiles/commit/ab00030cb5524bb86da1103f4c88bc5e502207d9))
+* **nvim:** enable Vue language extra plugin ([d57d128](https://github.com/sabertazimi/dotfiles/commit/d57d128a193285e19fa35d42bdfd6573dc674f2d))
+* **nvim:** switch AI plugin from copilot/claudecode to sidekick ([c99762c](https://github.com/sabertazimi/dotfiles/commit/c99762c8cad64197f2531caff5481afff97b44d1))
+* **tmux:** add explicit split pane keybindings and ghostty compatibility ([c04e625](https://github.com/sabertazimi/dotfiles/commit/c04e625532236a241fb6a89b49c3250dbc9b657a))
+* **tmux:** add extended-keys-format csi-u setting ([c92f4fa](https://github.com/sabertazimi/dotfiles/commit/c92f4fa7f0e8c36f15ee93f33f76a6a2609d2991))
+* **tmux:** add prefix-less window management key bindings ([f49aaf0](https://github.com/sabertazimi/dotfiles/commit/f49aaf0cd3c3beaf1233470dbc6760be41c9de87))
+* **tmux:** add smart split pane binding for C-S-h ([a64fa95](https://github.com/sabertazimi/dotfiles/commit/a64fa9533ec1b6bb313d5165792e066b5513e679))
+* **zsh:** add `grd` alias for deleting GitHub Actions runs ([78ca009](https://github.com/sabertazimi/dotfiles/commit/78ca009e09d7fd125707d22c621bea84dfb6bfa8))
+* **zsh:** add `grl` alias for `gh run list` ([c5b1669](https://github.com/sabertazimi/dotfiles/commit/c5b1669293046f25412af26a85878b8c7003e0b6))
+* **zsh:** add gvim and git diff name-only aliases ([bb5d7e9](https://github.com/sabertazimi/dotfiles/commit/bb5d7e97811fd902aa8f2fc22636f3b9ed9312c6))
+* **zsh:** add omz alias as shorthand for dotu() ([3382502](https://github.com/sabertazimi/dotfiles/commit/338250223e7d2dc0f3f28c69747d7c8dc9dd6920))
+* **zsh:** add skills update to `omz()` plugin update function ([225b600](https://github.com/sabertazimi/dotfiles/commit/225b60088326e5c007666e869bac0cead1b28957))
+* **zsh:** use -g flag in dotu() and add ccu alias for skills update ([bf704d5](https://github.com/sabertazimi/dotfiles/commit/bf704d5bc6fdc5e474f76641e6a5f0d575c968f1))
+* **zsh:** use single quotes for all alias definitions ([c59c8d0](https://github.com/sabertazimi/dotfiles/commit/c59c8d0c6a0c215a2173d3faa6a9bd3b2bf083ec))
+
+
+### Bug Fixes
+
+* **matugen:** remove `fcitx5` restart post_hook ([c12f18e](https://github.com/sabertazimi/dotfiles/commit/c12f18e9adae76cbf25458af9e8910e9f8932fc3))
+* **tmux:** adjust smart split aspect ratio from 2:1 to 2.5:1 ([4cda88c](https://github.com/sabertazimi/dotfiles/commit/4cda88c0921b015e7d4430e2cb14a863d73907c2))
+* **tmux:** remove redundant unbind commands ([8996e17](https://github.com/sabertazimi/dotfiles/commit/8996e1796068be2c49feb9364dc31db0892d8138))
+* **zsh:** remove `vi-mode` zsh plugin ([d88ca8b](https://github.com/sabertazimi/dotfiles/commit/d88ca8b4e7d81ce3bee8fe2bd55cadba2f85fe1b))
+
 ## [1.9.0](https://github.com/sabertazimi/dotfiles/compare/v1.8.0...v1.9.0) (2026-06-01)
 
 
