@@ -1,7 +1,16 @@
 {
   "display": {
-    "showTools": true,
     "showAgents": true,
-    "showTodos": true
+    "showDuration": true,
+    "showSessionName": true,
+    "showSpeed": true,
+    "showTodos": true,
+    "showTools": true
+  },
+  "gitStatus": {
+    "enabled": true,
+    "showAheadBehind": true,
+    "showDirty": true,
+    "showFileStats": true
   }
 }
