@@ -44,9 +44,6 @@ for entry in "${github_plugins[@]}"; do
   [ ! -d "$dest/.git" ] && echo "Installing $(basename "$(dirname "$dest")")/$(basename "$dest")..." && git clone --depth=1 --quiet "$url" "$dest"
 done
 
-# Rclone directory
-[ ! -d "$HOME/onedrive" ] && mkdir -p "$HOME/onedrive"
-
 # Zinit
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit"
 [ ! -d "$ZINIT_HOME" ] && mkdir -p "$(dirname $ZINIT_HOME)"
@@ -186,7 +183,7 @@ alias grl='gh run list'
 alias grw='gh run watch'
 
 # Misc
-alias onedrive='rclone mount onedrive:/ ~/onedrive --vfs-cache-mode full --daemon'
+alias onedrive='rclone mount onedrive:/ ~/Documents/onedrive --vfs-cache-mode full --daemon'
 alias ncm='tmux-music.sh'
 
 [ ! -f "$HOME/.zshrc.local" ] && touch ~/.zshrc.local

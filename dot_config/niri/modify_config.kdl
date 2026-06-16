@@ -7,9 +7,15 @@
 content=$(cat)
 
 # Helper function to check if a line exists in content
+# Supports literal string match or /regexp/
 line_exists() {
-  local line="$1"
-  echo "$content" | grep -qF -- "$line"
+  local pattern="$1"
+  if [[ "$pattern" == /*/ ]]; then
+    pattern="${pattern:1:-1}"
+    echo "$content" | grep -qE -- "$pattern"
+  else
+    echo "$content" | grep -qF -- "$pattern"
+  fi
 }
 
 # 1. Add layout always-center-single-column
@@ -71,8 +77,8 @@ if ! line_exists 'spawn-at-startup "fcitx5" "-d"'; then
 fi
 
 # 7. Add rclone onedrive mount spawn-at-startup
-if ! line_exists 'spawn-at-startup "rclone"'; then
-  content="${content}"$'\n'"spawn-at-startup \"rclone\" \"mount\" \"onedrive:/\" \"/home/sabertaz/onedrive\" \"--vfs-cache-mode\" \"full\" \"--daemon\""
+if ! line_exists '/spawn.*rclone/'; then
+  content="${content}"$'\n'"spawn-sh-at-startup \"mkdir -p ~/Documents/onedrive && rclone mount onedrive:/ ~/Documents/onedrive --vfs-cache-mode full --daemon\""
 fi
 
 # Output modified content
