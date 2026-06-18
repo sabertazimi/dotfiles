@@ -182,10 +182,6 @@ alias grd='gh run delete'
 alias grl='gh run list'
 alias grw='gh run watch'
 
-# Misc
-alias onedrive='rclone mount onedrive:/ ~/Documents/onedrive --vfs-cache-mode full --daemon'
-alias ncm='tmux-music.sh'
-
 [ ! -f "$HOME/.zshrc.local" ] && touch ~/.zshrc.local
 source ~/.zshrc.local
 
