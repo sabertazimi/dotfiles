@@ -202,6 +202,7 @@ binds {
     Mod+S hotkey-overlay-title="Screenshot" { screenshot; }
     Mod+Ctrl+S { screenshot-window; }
     Mod+Shift+S { screenshot-screen; }
+    Mod+Shift+A hotkey-overlay-title="Annotate Clipboard Image" { spawn "~/.local/bin/satty-clipboard.sh"; }
     XF86Launch1 { screenshot; }
     Ctrl+XF86Launch1 { screenshot-window; }
     Ctrl+Shift+XF86Launch1 { screenshot-screen; }
