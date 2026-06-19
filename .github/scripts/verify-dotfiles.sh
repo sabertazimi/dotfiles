@@ -79,7 +79,6 @@ FILES=(
   "$HOME/.local/bin/tmux-music.sh"
   "$HOME/.local/share/fcitx5/rime/default.custom.yaml"
   "$HOME/.local/share/fcitx5/rime/rime_ice.custom.yaml"
-  "$HOME/.local/share/fcitx5/rime/lua/lunar.db"
   "$HOME/.local/share/fcitx5/themes/matugen-dark/panel.svg"
   "$HOME/.local/share/fcitx5/themes/matugen-light/panel.svg"
   "$HOME/.local/state/DankMaterialShell/session.json"
