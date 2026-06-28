@@ -6,7 +6,7 @@ export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$HOME/.local/bin:$PNPM_HOME/bin:$HOME/.cargo/bin:$HOME/go/bin:$PATH"
 export FZF_DEFAULT_COMMAND="fd --type f --strip-cwd-prefix --hidden --follow --exclude .git"
 export FZF_CTRL_T_COMMAND="fd --strip-cwd-prefix --hidden --follow --exclude .git"
-export FZF_DEFAULT_OPTS="--bind 'ctrl-d:preview-half-page-down,ctrl-u:preview-half-page-up,ctrl-/:change-preview-window(down|hidden|)'"
+export FZF_DEFAULT_OPTS="--bind 'ctrl-d:preview-half-page-down,ctrl-u:preview-half-page-up,ctrl-l:change-preview-window(down|hidden|)'"
 export FZF_CTRL_T_OPTS="
   --preview 'fzf-preview.sh {}'
   --bind 'ctrl-y:execute-silent(echo -n {} | wl-copy)+abort'
