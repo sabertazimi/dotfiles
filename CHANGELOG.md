@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.11.0](https://github.com/sabertazimi/dotfiles/compare/v1.10.0...v1.11.0) (2026-06-29)
+
+
+### Features
+
+* **claude:** expand `statusline` with git status, duration, and session info ([4cd360b](https://github.com/sabertazimi/dotfiles/commit/4cd360bdc3d85b0942a2f542fb3cf176f156340d))
+* **niri:** bind `Mod+Shift+A` to annotate clipboard image with satty ([93ae987](https://github.com/sabertazimi/dotfiles/commit/93ae987618ef1324f9f4bd20d2701e47d758a3ce))
+* **onedrive:** move `onedrive` `rclone` mount to `~/Documents/onedrive` ([5b75e7b](https://github.com/sabertazimi/dotfiles/commit/5b75e7b98c823c0b471a45d03c47f845d898de44))
+
+
+### Bug Fixes
+
+* **fcitx:** drop obsolete `lunar.db` symlink ([98bb569](https://github.com/sabertazimi/dotfiles/commit/98bb5694b0be6ab0a1b5c74a7e6b7cbc65a651f3)), closes [hchunhui/librime-lua#430](https://github.com/hchunhui/librime-lua/issues/430)
+* **zsh:** drop aliases now managed by niri ([de08551](https://github.com/sabertazimi/dotfiles/commit/de0855186993224bcd812e726cc3a3d9d05cccc9))
+* **zsh:** rebind fzf preview-window toggle to `ctrl-l` ([8536767](https://github.com/sabertazimi/dotfiles/commit/85367674c9206ac90f6d222ac55afd195c06fe5e))
+
 ## [1.10.0](https://github.com/sabertazimi/dotfiles/compare/v1.9.0...v1.10.0) (2026-06-14)
 
 
