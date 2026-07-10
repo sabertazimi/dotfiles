@@ -11,6 +11,9 @@ jq -j '
   .blurEnabled = true |
   .blurWallpaperOnOverview = true |
   .iconTheme = "Papirus" |
+  .iconThemeDark = "Papirus-Dark" |
+  .iconThemeLight = "Papirus-Light" |
+  .iconThemePerMode = true |
   .fontFamily = "思源黑体 CN" |
   .monoFontFamily = "Maple Mono NF CN" |
   .use24HourClock = true |
