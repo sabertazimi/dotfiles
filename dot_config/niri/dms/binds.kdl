@@ -6,7 +6,7 @@ binds {
     // === Application Launchers ===
     Mod+A hotkey-overlay-title="Clipboard Manager" { spawn "dms" "ipc" "call" "clipboard" "toggle"; }
     Mod+B hotkey-overlay-title="Web Browser" { spawn "firefox"; }
-    Mod+D hotkey-overlay-title="Application Launcher" { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
+    Mod+D hotkey-overlay-title="Spotlight Bar" { spawn "dms" "ipc" "call" "spotlight-bar" "toggle"; }
     Mod+E hotkey-overlay-title="File Explorer" { spawn "ghostty" "-e" "yazi"; }
     Mod+G hotkey-overlay-title="Task Manager" { spawn "dms" "ipc" "call" "processlist" "focusOrToggle"; }
     Mod+M hotkey-overlay-title="Music Player" { spawn "~/.local/bin/tmux-music.sh"; }
@@ -133,6 +133,9 @@ binds {
     Mod+Ctrl+I         { move-column-to-workspace-up; }
 
     // === Workspace Management ===
+    Ctrl+Shift+R hotkey-overlay-title="Rename Workspace" {
+        spawn "dms" "ipc" "call" "workspace-rename" "open";
+    }
 
     // === Move Workspaces ===
     Mod+Shift+Page_Down { move-workspace-down; }
@@ -205,10 +208,10 @@ binds {
     Mod+Shift+A hotkey-overlay-title="Annotate Clipboard Image" { spawn "~/.local/bin/satty-clipboard.sh"; }
     XF86Launch1 { screenshot; }
     Ctrl+XF86Launch1 { screenshot-window; }
-    Ctrl+Shift+XF86Launch1 { screenshot-screen; }
+    Alt+XF86Launch1 { screenshot-screen; }
     Print { screenshot; }
     Ctrl+Print { screenshot-window; }
-    Ctrl+Shift+Print { screenshot-screen; }
+    Alt+Print { screenshot-screen; }
 
     // === System Controls ===
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
