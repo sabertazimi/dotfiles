@@ -10,6 +10,7 @@ window-rule {
 
 window-rule {
     match app-id="^firefox$"
+    match app-id="^google-chrome"
     match app-id="^imv$"
     match app-id="^mpv$"
     match app-id="^steam_app_[0-9]+$"
