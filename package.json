@@ -3,7 +3,7 @@
   "type": "module",
   "version": "1.11.0",
   "private": true,
-  "packageManager": "pnpm@11.8.0",
+  "packageManager": "pnpm@11.15.1",
   "description": "Hackable personal dotfiles managed with chezmoi",
   "author": "sabertazimi <sabertazimi@gmail.com>",
   "license": "MIT",
@@ -37,6 +37,6 @@
   "devDependencies": {
     "commit-and-tag-version": "^12.7.3",
     "husky": "^9.1.7",
-    "lint-staged": "^17.0.7"
+    "lint-staged": "^17.1.0"
   }
 }
